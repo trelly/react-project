@@ -1,0 +1,33 @@
+{
+  "name": "react-project",
+  "version": "1.0.0",
+  "description": "react-project is the project skeleton",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
+    "build": "webpack --config webpack-production.config.js --progress --colors --display-modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trelly/react-project.git"
+  },
+  "keywords": [
+    "react",
+    "skeleton",
+    "webpack"
+  ],
+  "author": "terry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trelly/react-project/issues"
+  },
+  "homepage": "https://github.com/trelly/react-project#readme",
+  "dependencies": {
+    "react": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
