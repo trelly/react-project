@@ -7,26 +7,26 @@ var path = require('path');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 module.exports = {
-    entry: './src/app.jsx',
+    entry: path.resolve(__dirname, 'src/app.jsx'),
     output: {
-        path: __dirname + "/dist",
+        path: path.resolve(__dirname, 'dist'),
         filename: "bundle.js"
     },
-    resolve: {
-        extensions: ["", ".js", ".jsx"]
-    },
     module: {
-        loaders: [{
-            test: /\.(css|less)$/,
-            loader: "style-loader!css-loader!less-loader"
-        }, {
-            test: /\.(js|jsx)$/,
-            exclude: /(node_modules|bower_components)/,
-            loader: ['babel-loader'], // 'babel-loader' is also a legal name to reference
-            query: {
-                presets: ['react', 'es2015']
+        loaders: [
+            {
+                test: /\.(css|less)$/,
+                loader: 'style-loader!css-loader!less-loader'
+            },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: ['babel-loader'],
+                query: {
+                    presets: ['react', 'es2015']
+                }
             }
-        }]
+        ]
     },
     plugins: []
 };

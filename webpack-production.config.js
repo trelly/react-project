@@ -2,14 +2,14 @@ var webpack = require('webpack');
 
 // nodejspath 模块
 var path = require('path');
-var buildPath = path.resolve(__dirname, 'output/webroot/resource/pgc/pgc_platform_react');
+var buildPath = path.resolve(__dirname, 'dist');
 
 // webpack 若需要迁移文件操作，需要加载transfer-webpack-plugin 插件
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 module.exports = {
     // 入口文件
-    entry: './src/projects/batch_ban/app.jsx',
+    entry: './src/app.jsx',
     // 配置加载后缀名
     resolve: {
         extensions: ["", ".js", ".jsx"]
