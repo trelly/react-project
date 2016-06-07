@@ -24,6 +24,7 @@
   "homepage": "https://github.com/trelly/react-project#readme",
   "dependencies": {
     "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-tinymce": "^0.5.1",
     "redux": "^3.5.2",
