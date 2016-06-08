@@ -12,9 +12,14 @@ const App = React.createClass({
             <TinyMCE
                 content="<p>This is the initial content of the editor</p>"
                 config={{
-          plugins: 'link image code',
-          toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
-        }}
+                    plugins: "textpattern, image, link, media, preview, anchor, autosave",
+                    language: "zh_CN",
+                    menubar: false,
+                    toolbar: ['undo redo | bold underline | blockquote bullist numlist alignleft aligncenter alignright', 'link image media | preview'],
+                    autosave_ask_before_unload: true,
+                    autosave_interval: "5s",
+                    height: '80%'
+                }}
                 onChange={this.handleEditorChange}
             />
         );
