@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-class Title extends Component {
+class Button extends Component {
     render() {
         const value = this.props.value;
         return (
