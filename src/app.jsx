@@ -1,24 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react'
+import ReactDom from 'react-dom'
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux'
 
-import Title from './components/Title.jsx'
-import { Button } from 'react-bootstrap'
-import Category from './components/Category.jsx'
-import Original from './components/Original.jsx'
-import {} from 'redux'
+import Wizard from './components/Wizard.jsx'
+import SimpleForm from './containers/ArticleForm.jsx'
+import { saveArticle } from './actions'
 
-const App = React.createClass({
+import reducer from './reducers'
+
+import thunk from 'redux-thunk';
+import promise from 'redux-promise';
+import createLogger from 'redux-logger';
+
+const logger = createLogger();
+const store = createStore(
+    reducer,
+    applyMiddleware(thunk, promise, logger)
+);
+
+class App extends Component {
     render() {
         return (
             <div>
-                <Title value="this is a input"></Title>
-
-                <Category list={['新闻', '娱乐']} />
-                <Original show={true}/>
-                <Button className="btn btn-primary">存草稿</Button>
+                <Wizard steps="2" onFinish={e=>console.log(e)}>
+                    <div>
+                        <div>title1</div>
+                        <div>content1</div>
+                    </div>
+                    <div>
+                        <div>title2</div>
+                        <div>content2</div>
+                    </div>
+                </Wizard>
+                <SimpleForm onSubmit={data=>store.dispatch(saveArticle(data))}/>
             </div>
-        );
+        )
     }
-});
+}
 
-ReactDOM.render(<App/>, document.getElementById('container'));
+ReactDom.render(<Provider store={store}><App/></Provider>, document.getElementById('container'));
