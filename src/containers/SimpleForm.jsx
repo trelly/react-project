@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 export const fields = [ 'firstName', 'lastName', 'email', 'sex', 'favoriteColor', 'employed', 'notes' ]
-import TinyMCE from 'react-tinymce'
 
 class SimpleForm extends Component {
     render() {
@@ -9,19 +8,9 @@ class SimpleForm extends Component {
             fields: { firstName, lastName, email, sex, favoriteColor, employed, notes },
             handleSubmit,
             resetForm,
-            submitting,
-            content,
-            setContent
+            submitting
         } = this.props
         return (<form onSubmit={handleSubmit}>
-                <TinyMCE {...content}
-                    content={content}
-                    config={{
-                    menubar: false,
-                    plugins: 'autolink link image lists print preview',
-                    toolbar: 'styleselect | bold italic | alignleft aligncenter alignright | link ',
-                    statusbar: false,
-                }}/>
                 <div>
                     <label>First Name</label>
                     <div>

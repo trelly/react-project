@@ -5,7 +5,7 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 
-class Dialog extends Component {
+class Tab extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -34,4 +34,4 @@ class Dialog extends Component {
     }
 }
 
-export default Dialog
+export default Tab

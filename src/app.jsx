@@ -4,7 +4,9 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux'
 
 import Wizard from './components/Wizard.jsx'
-import SimpleForm from './containers/ArticleForm.jsx'
+import ArticleForm from './containers/ArticleForm.jsx'
+import Toast from './components/Toast.jsx'
+import Dialog from './components/Dialog.jsx'
 import { saveArticle } from './actions'
 
 import reducer from './reducers'
@@ -20,9 +22,27 @@ const store = createStore(
 );
 
 class App extends Component {
+    showToast() {
+        this.refs.myToast.show();
+    }
+    showDialog() {
+        this.refs.myDialog.show();
+    }
     render() {
         return (
             <div>
+                <ArticleForm onSubmit={data=>store.dispatch(saveArticle(data))}/>
+                <div>
+                    <button onClick={this.showToast.bind(this)}>toast</button>
+                    <button onClick={this.showDialog.bind(this)}>dialog</button>
+                </div>
+                <Toast ref="myToast">
+                    <span>this is a toast</span>
+                </Toast>
+                <Dialog ref="myDialog">
+                    <div width="600px"></div>
+                    this is a dialog
+                </Dialog>
                 <Wizard steps="2" onFinish={e=>console.log(e)}>
                     <div>
                         <div>title1</div>
@@ -33,7 +53,6 @@ class App extends Component {
                         <div>content2</div>
                     </div>
                 </Wizard>
-                <SimpleForm onSubmit={data=>store.dispatch(saveArticle(data))}/>
             </div>
         )
     }
