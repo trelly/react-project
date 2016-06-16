@@ -48,6 +48,10 @@ module.exports = {
             {
                 from: path.resolve(__dirname, 'src/langs'),
                 to: 'tinymce/langs'
+            },
+            {
+                from: path.resolve(__dirname, 'node_modules/bootstrap'),
+                to: 'bootstrap'
             }], path.resolve(__dirname, "build/static"))
     ]
 };

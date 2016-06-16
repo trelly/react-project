@@ -32,27 +32,6 @@ class App extends Component {
         return (
             <div>
                 <ArticleForm onSubmit={data=>store.dispatch(saveArticle(data))}/>
-                <div>
-                    <button onClick={this.showToast.bind(this)}>toast</button>
-                    <button onClick={this.showDialog.bind(this)}>dialog</button>
-                </div>
-                <Toast ref="myToast">
-                    <span>this is a toast</span>
-                </Toast>
-                <Dialog ref="myDialog">
-                    <div width="600px"></div>
-                    this is a dialog
-                </Dialog>
-                <Wizard steps="2" onFinish={e=>console.log(e)}>
-                    <div>
-                        <div>title1</div>
-                        <div>content1</div>
-                    </div>
-                    <div>
-                        <div>title2</div>
-                        <div>content2</div>
-                    </div>
-                </Wizard>
             </div>
         )
     }

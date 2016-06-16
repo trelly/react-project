@@ -1,3 +1,87 @@
+body {
+    padding: 0;
+    margin: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.pgc-header {
+    display: block;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: floralwhite;
+}
+
+/*正文区域*/
+
+.pgc-content {
+    position: absolute;
+    bottom: 0;
+    top: 50px;
+    width: 100%;
+    padding-right: 300px;
+    overflow-y: auto;
+}
+
+.pgc-editor {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 10px 10px;
+    padding-top: 30px;
+}
+
+.pgc-title {
+    width: 100%;
+}
+
+.pgc-form-title {
+    width: 100%;
+    line-height: 1.5em;
+    font-size: 18px;
+    border: none;
+}
+
+/*侧边栏*/
+.pgc-slider {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    overflow: hidden;
+    background: #F0F0F0;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.pgc-slider-wrap {
+    margin: 20px 10px;
+    text-align: center;
+}
+
+.pgc-tab-content {
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.pgc-label {
+    width: 10em;
+    display: inline-block;
+}
+
+.pgc-switch {
+    margin-top: 10px;
+    height: 30px;
+}
+
 .t-toast {
     position: fixed;
     top: 50%;
