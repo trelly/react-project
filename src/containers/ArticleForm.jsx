@@ -18,74 +18,31 @@ class SimpleForm extends Component {
                     <TinyMCE {...content}
                         content={content}
                         config={{
-                    menubar: false,
-                    plugins: 'autolink link image lists print preview',
-                    toolbar: 'styleselect | bold italic | alignleft aligncenter alignright | link ',
-                    statusbar: false,
-
+                            plugins: "textpattern, image, link, media, preview, anchor, autosave",
+                            menubar: false,
+                            toolbar: ['undo redo | bold underline | blockquote bullist numlist alignleft aligncenter alignright', 'link image media | preview'],
+                            autosave_restore_when_empty: false,
+                            autosave_ask_before_unload: true,
+                            autosave_interval: "5s",
+                            height: '500px'
                     }}/>
                 </div>
                 <div className="pgc-slider">
-                    <div>
-                        <label>First Name</label>
-                        <div>
-                            <input type="text" placeholder="First Name" {...firstName}/>
+                    <ul className="nav nav-tabs" role="tablist">
+                        <li role="presentation">
+                            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">设置</a></li>
+                        <li role="presentation" className="active">
+                            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">功能</a></li>
+                        <li role="presentation">
+                            <a href="#template" aria-controls="template" role="tab" data-toggle="tab">模板</a></li>
+                    </ul>
+                    <div className="tab-content pgc-tab-content">
+                        <div role="tabpanel" className="tab-pane" id="settings">设置
                         </div>
-                    </div>
-                    <div>
-                        <label>Last Name</label>
-                        <div>
-                            <input type="text" placeholder="Last Name" {...lastName}/>
+                        <div role="tabpanel" className="tab-pane active" id="profile">
                         </div>
-                    </div>
-                    <div>
-                        <label>Email</label>
-                        <div>
-                            <input type="email" placeholder="Email" {...email}/>
+                        <div role="tabpanel" className="tab-pane active" id="template">
                         </div>
-                    </div>
-                    <div>
-                        <label>Sex</label>
-                        <div>
-                            <label>
-                                <input type="radio" {...sex} value="male" checked={sex.value === 'male'}/> Male
-                            </label>
-                            <label>
-                                <input type="radio" {...sex} value="female" checked={sex.value === 'female'}/> Female
-                            </label>
-                        </div>
-                    </div>
-                    <div>
-                        <label>Favorite Color</label>
-                        <div>
-                            <select
-                                {...favoriteColor}
-                                value={favoriteColor.value || ''}>
-                                <option></option>
-                                <option value="ff0000">Red</option>
-                                <option value="00ff00">Green</option>
-                                <option value="0000ff">Blue</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="checkbox" {...employed}/> Employed
-                        </label>
-                    </div>
-                    <div>
-                        <label>Notes</label>
-                        <div>
-                        <textarea {...notes} value={notes.value || ''}/>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" disabled={submitting}>
-                            {submitting ? <i/> : <i/>} Submit
-                        </button>
-                        <button type="button" disabled={submitting} onClick={resetForm}>
-                            Clear Values
-                        </button>
                     </div>
                 </div>
             </form>

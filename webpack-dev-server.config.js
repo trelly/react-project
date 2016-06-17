@@ -42,7 +42,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new TransferWebpackPlugin([
             {
-                from: path.resolve(__dirname, 'bower_components/tinymce'),
+                from: path.resolve(__dirname, 'node_modules/tinymce'),
                 to: 'tinymce'
             },
             {
