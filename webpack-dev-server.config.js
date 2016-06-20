@@ -46,6 +46,10 @@ module.exports = {
                 to: 'tinymce'
             },
             {
+                from: path.resolve(__dirname, 'node_modules/jquery'),
+                to: 'jquery'
+            },
+            {
                 from: path.resolve(__dirname, 'src/langs'),
                 to: 'tinymce/langs'
             },

@@ -1,7 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
-export const fields = [ 'firstName', 'lastName', 'email', 'sex', 'favoriteColor', 'employed', 'notes' ]
 import TinyMCE from 'react-tinymce'
+import { Form, Tab, Tabs, Button, Col, FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap'
+import DateTimeField from 'react-bootstrap-datetimepicker'
+
+export const fields = [ 'firstName', 'lastName', 'email', 'sex', 'favoriteColor', 'employed', 'notes' ]
+export const timeFormat = {
+    date: "1990-06-05",
+    format: "YYYY-MM-DD",
+    inputFormat: "YYYY/MM/DD",
+    mode: "date"
+};
 
 class SimpleForm extends Component {
     render() {
@@ -28,22 +37,43 @@ class SimpleForm extends Component {
                     }}/>
                 </div>
                 <div className="pgc-slider">
-                    <ul className="nav nav-tabs" role="tablist">
-                        <li role="presentation">
-                            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">设置</a></li>
-                        <li role="presentation" className="active">
-                            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">功能</a></li>
-                        <li role="presentation">
-                            <a href="#template" aria-controls="template" role="tab" data-toggle="tab">模板</a></li>
-                    </ul>
-                    <div className="tab-content pgc-tab-content">
-                        <div role="tabpanel" className="tab-pane" id="settings">设置
-                        </div>
-                        <div role="tabpanel" className="tab-pane active" id="profile">
-                        </div>
-                        <div role="tabpanel" className="tab-pane active" id="template">
-                        </div>
-                    </div>
+                    <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+                        <Tab eventKey={1} title="设置">
+                            <Button bsStyle="primary">原创</Button>
+                                <FormGroup controlId="formControlsSelect">
+                                    <Col componentClass={ControlLabel} sm={3}>
+                                        广告
+                                    </Col>
+                                    <Col sm={9}>
+                                        <Radio checked readOnly>
+                                            展示广告
+                                        </Radio>
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup controlId="formControlsSelect">
+                                    <Col componentClass={ControlLabel} sm={3}>
+                                        分类
+                                    </Col>
+                                    <Col sm={9}>
+                                        <FormControl componentClass="select" placeholder="请选择">
+                                            <option value="select">select</option>
+                                            <option value="other">...</option>
+                                        </FormControl>
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Col componentClass={ControlLabel}>定时发送</Col>
+                                    <DateTimeField
+                                        dateTime={timeFormat.date}
+                                        format={timeFormat.format}
+                                        viewMode={timeFormat.mode}
+                                        inputFormat={timeFormat.inputFormat}
+                                    />
+                                </FormGroup>
+                        </Tab>
+                        <Tab eventKey={2} title="功能">Tab 2 content</Tab>
+                        <Tab eventKey={3} title="模板" disabled>Tab 3 content</Tab>
+                    </Tabs>
                 </div>
             </form>
         )
