@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/assets/static/css/normalize.css">
+    <link rel="stylesheet" href="/assets/static/css/index.css">
+</head>
+<body>
+    <header class="t-header">
+        <div class="t-logo"></div>
+        <div class="t-header-menu">
+            <div class="t-publish">
+                <button class="t-publish-btn">发表 <span class="t-caret"></span></button>
+                <div class="t-dropdown">
+                    <span class="t-dropdown-caret"></span>
+                    <ul class="t-publish-menu">
+                        <li class="t-menu-item">存草稿</li>
+                        <li class="t-menu-item">取消发布</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="t-message">
+                <i class="icon-message"></i>
+            </div>
+        </div>
+    </header>
+    <nav class="t-slider-left">
+        <div class="t-tab">
+            <ul class="t-menu-bar">
+                <li class="t-menu active"><i class="t-icon icon-edit"></i><span class="t-icon-text">文章</span></li>
+                <li class="t-menu"><i class="t-icon icon-video"></i><span class="t-icon-text">视频</span></li>
+                <li class="t-menu"><i class="t-icon icon-atlas"></i><span class="t-icon-text">图集</span></li>
+                <li class="t-menu"><i class="t-icon icon-test"></i><span class="t-icon-text">测试</span></li>
+            </ul>
+        </div>
+        <div class="t-tab-content">
+            <div class="t-tab-item">
+
+            </div>
+        </div>
+    </nav>
+    <div class="t-content">
+        <div class="t-editor">
+            <textarea id="editor" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+    <script src="/assets/tinymce/tinymce.min.js"></script>
+    <script src="/assets/tinymce/langs/zh_CN.js"></script>
+    <script>
+        /**
+         * @file editor.config.js
+         * @desc 编辑器配置文件
+         */
+        tinymce.init({
+            selector: '#editor',
+            plugins: "textpattern, image, link, media, preview, anchor, autosave",
+            menubar: false,
+                toolbar: ['undo redo | bold underline | blockquote bullist numlist alignleft aligncenter alignright', 'link image media | preview'],
+                autosave_restore_when_empty: false,
+                autosave_ask_before_unload: true,
+                autosave_interval: "5s",
+                min_height: '100%',
+                width: '700',
+                statusbar: false,
+                plugins: "autoresize",
+                autoresize_bottom_margin: 50
+        });
+    </script>
+</body>
+</html>

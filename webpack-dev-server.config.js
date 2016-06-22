@@ -42,20 +42,28 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new TransferWebpackPlugin([
             {
-                from: path.resolve(__dirname, 'node_modules/tinymce'),
-                to: 'tinymce'
-            },
-            {
                 from: path.resolve(__dirname, 'node_modules/jquery'),
                 to: 'jquery'
             },
             {
-                from: path.resolve(__dirname, 'src/langs'),
-                to: 'tinymce/langs'
+                from: path.resolve(__dirname, 'node_modules/tinymce'),
+                to: 'tinymce'
             },
             {
                 from: path.resolve(__dirname, 'node_modules/bootstrap'),
                 to: 'bootstrap'
-            }], path.resolve(__dirname, "build/static"))
+            },
+            {
+                from: path.resolve(__dirname, 'node_modules/normalize.css'),
+                to: 'static/css'
+            },
+            {
+                from: path.resolve(__dirname, 'src/static/langs'),
+                to: 'tinymce/langs'
+            },
+            {
+                from: path.resolve(__dirname, 'src/static'),
+                to: 'static'
+            }])
     ]
 };

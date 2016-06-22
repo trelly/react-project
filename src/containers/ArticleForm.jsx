@@ -3,6 +3,7 @@ import { reduxForm } from 'redux-form'
 import TinyMCE from 'react-tinymce'
 import { Form, Tab, Tabs, Button, Col, FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap'
 import DateTimeField from 'react-bootstrap-datetimepicker'
+import category from '../constants/Category'
 
 export const fields = [ 'firstName', 'lastName', 'email', 'sex', 'favoriteColor', 'employed', 'notes' ]
 export const timeFormat = {
@@ -56,8 +57,7 @@ class SimpleForm extends Component {
                                     </Col>
                                     <Col sm={9}>
                                         <FormControl componentClass="select" placeholder="请选择">
-                                            <option value="select">select</option>
-                                            <option value="other">...</option>
+                                            {category}
                                         </FormControl>
                                     </Col>
                                 </FormGroup>
