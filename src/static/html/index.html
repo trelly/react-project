@@ -54,7 +54,7 @@
          */
         tinymce.init({
             selector: '#editor',
-            plugins: "textpattern, image, link, media, preview, anchor, autosave",
+            plugins: "textpattern, image, link, media, preview, anchor, autosave, autoresize",
             menubar: false,
                 toolbar: ['undo redo | bold underline | blockquote bullist numlist alignleft aligncenter alignright', 'link image media | preview'],
                 autosave_restore_when_empty: false,
@@ -63,7 +63,6 @@
                 min_height: '100%',
                 width: '700',
                 statusbar: false,
-                plugins: "autoresize",
                 autoresize_bottom_margin: 50
         });
     </script>
