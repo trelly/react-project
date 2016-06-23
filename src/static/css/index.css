@@ -9,7 +9,7 @@ body {
 
 
 body {
-    font-family: "Microsoft YaHei", helvetica,Arial,simsun;
+    font-family: helvetica,Arial,"Hiragino Sans GB","Microsoft YaHei",simsun
 }
 
 .t-header {
@@ -37,6 +37,18 @@ body {
     width: 350px;
     border-left: 1px solid #f1f1f1;
     box-shadow: 5px 0px 7px #f1f1f1;
+    z-index: 1000;
+}
+
+.t-collapse {
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    margin-top: -49px;
+    width: 12px;
+    height: 98px;
+    background: #fff url("/assets/static/images/collapse-left.png") no-repeat center;
+    box-shadow: 5px 0px 7px #f1f1f1;
 }
 
 .t-content {
@@ -55,7 +67,7 @@ body {
 
 .t-tab-content {
     margin: 0 0 0 70px;
-    padding: 20px;
+    padding: 0 20px;
     min-height: 100%;
 }
 
@@ -203,4 +215,93 @@ body {
 .t-editor {
     width: 700px;
     margin: 20px auto;
+}
+
+.t-menu-collapse {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.t-panel {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.t-panel-title {
+    position: relative;
+    height: 60px;
+    color: #5d5d5d;
+    font-size: 16px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.t-panel-title::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    right: 0;
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: url("/assets/static/images/collapse.png") no-repeat center;
+    transform: rotateZ(180deg);
+}
+
+.t-panel-collapse {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.t-panel-body {
+    padding: 10px 0;
+}
+
+.t-menu-other {
+    position: absolute;
+    bottom: 15px;
+}
+
+.t-icon-eyes {
+    display: inline-block;
+    width: 70px;
+    height: 42px;
+    background: url("/assets/static/images/eyes.png") no-repeat center;
+}
+
+.t-icon-dnd {
+    display: inline-block;
+    width: 70px;
+    height: 42px;
+    background: url("/assets/static/images/dnd.png") no-repeat center;
+}
+
+/*form*/
+
+.t-control-group {
+    margin-top: 20px;
+}
+
+.t-label {
+    font-size: 14px;
+    color: #999;
+}
+
+.t-button-origin {
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid #ff746e;
+    padding: 0;
+    margin-top: 10px;
+    border-radius: 8px;
+    color: #ff746e;
 }
