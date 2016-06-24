@@ -13,10 +13,14 @@ body {
 }
 
 .t-header {
+    position: fixed;
+    width: 100%;
     border-top: 4px solid #ff4d45;
     border-bottom: 1px solid #d9dde4;
     padding: 17px 18px 0 23px;
     height: 70px;
+    background: #fff;
+    z-index: 1000;
 }
 
 .t-logo {
@@ -30,9 +34,14 @@ body {
     float: right;
 }
 
-.t-slider-left {
+.t-main {
     position: fixed;
     top: 70px;
+    bottom: 0;
+}
+
+.t-slider-left {
+    position: absolute;
     bottom: 0;
     width: 350px;
     border-left: 1px solid #f1f1f1;
@@ -214,7 +223,7 @@ body {
 
 .t-editor {
     width: 700px;
-    margin: 20px auto;
+    margin: 90px auto;
 }
 
 .t-menu-collapse {
