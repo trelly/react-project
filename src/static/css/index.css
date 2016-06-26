@@ -37,15 +37,15 @@ body {
 .t-main {
     position: fixed;
     top: 70px;
+    right: 0;
     bottom: 0;
+    left: 70px;
 }
 
 .t-slider-left {
     position: absolute;
     bottom: 0;
-    width: 350px;
-    border-left: 1px solid #f1f1f1;
-    box-shadow: 5px 0px 7px #f1f1f1;
+    top: 70px;
     z-index: 1000;
 }
 
@@ -61,10 +61,14 @@ body {
 }
 
 .t-content {
-    margin: 0 0 0 350px;
-    min-height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    border-left: 1px solid #f1f1f1;
+    box-shadow: 5px 0px 7px #f1f1f1;
+    z-index: 1000;
 }
 
 .t-tab {
@@ -75,9 +79,7 @@ body {
 }
 
 .t-tab-content {
-    margin: 0 0 0 70px;
     padding: 0 20px;
-    min-height: 100%;
 }
 
 .t-menu-bar {
@@ -222,8 +224,19 @@ body {
 }
 
 .t-editor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    left: 280px;
+    overflow-y: auto;
+}
+
+.t-editor-wrap {
+    text-align: center;
     width: 700px;
-    margin: 90px auto;
+    margin: 20px auto;
 }
 
 .t-menu-collapse {

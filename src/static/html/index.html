@@ -25,20 +25,22 @@
             </div>
         </div>
     </header>
-    <div class="t-main">
-        <nav class="t-slider-left">
-            <div class="t-tab">
-                <ul class="t-menu-bar">
-                    <li class="t-menu active"><i class="t-icon icon-edit"></i><span class="t-icon-text">文章</span></li>
-                    <li class="t-menu"><i class="t-icon icon-video"></i><span class="t-icon-text">视频</span></li>
-                    <li class="t-menu"><i class="t-icon icon-atlas"></i><span class="t-icon-text">图集</span></li>
-                    <li class="t-menu"><i class="t-icon icon-test"></i><span class="t-icon-text">测试</span></li>
-                </ul>
-                <div class="t-menu-other">
-                    <i class="t-icon-eyes"></i>
-                    <i class="t-icon-dnd"></i>
-                </div>
+    <nav class="t-slider-left">
+        <div class="t-tab">
+            <ul class="t-menu-bar">
+                <li class="t-menu active"><i class="t-icon icon-edit"></i><span class="t-icon-text">文章</span></li>
+                <li class="t-menu"><i class="t-icon icon-video"></i><span class="t-icon-text">视频</span></li>
+                <li class="t-menu"><i class="t-icon icon-atlas"></i><span class="t-icon-text">图集</span></li>
+                <li class="t-menu"><i class="t-icon icon-test"></i><span class="t-icon-text">测试</span></li>
+            </ul>
+            <div class="t-menu-other">
+                <i class="t-icon-eyes"></i>
+                <i class="t-icon-dnd"></i>
             </div>
+        </div>
+    </nav>
+    <div class="t-main">
+        <div class="t-content">
             <div class="t-tab-content">
                 <div class="t-tab-item">
                     <div class="t-menu-collapse">
@@ -123,9 +125,9 @@
                 </div>
             </div>
             <div class="t-collapse"></div>
-        </nav>
-        <div class="t-content">
-            <div class="t-editor">
+        </div>
+        <div class="t-editor">
+            <div class="t-editor-wrap">
                 <textarea id="editor" cols="30" rows="10"></textarea>
             </div>
         </div>
@@ -145,8 +147,7 @@
                 autosave_restore_when_empty: false,
                 autosave_ask_before_unload: true,
                 autosave_interval: "5s",
-                min_height: '100%',
-                width: '700',
+                width: '700px',
                 statusbar: false,
                 autoresize_bottom_margin: 50
         });
