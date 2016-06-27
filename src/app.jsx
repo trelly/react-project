@@ -3,11 +3,8 @@ import ReactDom from 'react-dom'
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux'
 
-import Wizard from './components/Wizard.jsx'
-import ArticleForm from './containers/ArticleForm.jsx'
-import Toast from './components/Toast.jsx'
-import Dialog from './components/Dialog.jsx'
-import { saveArticle } from './actions'
+import Header from './containers/Header.jsx'
+import MenuSlider from './containers/Slider.jsx'
 
 import reducer from './reducers'
 
@@ -31,7 +28,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                <ArticleForm onSubmit={data=>store.dispatch(saveArticle(data))}/>
+                <Header></Header>
+                <MenuSlider tab="1"></MenuSlider>
             </div>
         )
     }

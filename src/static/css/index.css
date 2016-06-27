@@ -12,6 +12,10 @@ body {
     font-family: helvetica,Arial,"Hiragino Sans GB","Microsoft YaHei",simsun
 }
 
+.iconfont {
+    font-size: 22px;
+}
+
 .t-header {
     position: fixed;
     width: 100%;
@@ -286,20 +290,23 @@ body {
 .t-menu-other {
     position: absolute;
     bottom: 15px;
+    text-align: center;
 }
 
-.t-icon-eyes {
+.t-icon-radius {
     display: inline-block;
-    width: 70px;
-    height: 42px;
-    background: url("/assets/static/images/eyes.png") no-repeat center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #e8e8e8;
+    line-height: 38px;
+    margin: 4px auto;
+    cursor: pointer;
+    color: #999;
 }
 
-.t-icon-dnd {
-    display: inline-block;
-    width: 70px;
-    height: 42px;
-    background: url("/assets/static/images/dnd.png") no-repeat center;
+.t-icon-radius:hover {
+    opacity: .8;
 }
 
 /*form*/

@@ -20,14 +20,12 @@ class Tab extends Component {
     render() {
         if (!this.state.closed) {
             return (
-                <div class="t-dialog">
-                    <div>
-                        <span class="t-dialog-close" onClick={()=>this.setState({closed: true})}>X</span>
-                    </div>
-                    <div>
-                        {this.props.children}
-                    </div>
-                </div>
+                <ul class="t-menu-bar">
+                    <li class="t-menu active"><i class="iconfont icon-articletab"></i><span class="t-icon-text">文章</span></li>
+                    <li class="t-menu"><i class="iconfont icon-videotab"></i><span class="t-icon-text">视频</span></li>
+                    <li class="t-menu"><i class="iconfont icon-pictab"></i><span class="t-icon-text">图集</span></li>
+                    <li class="t-menu"><i class="iconfont icon-testtab"></i><span class="t-icon-text">测试</span></li>
+                </ul>
             )
         }
         return null;
