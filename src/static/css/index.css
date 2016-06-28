@@ -305,6 +305,8 @@ body {
 
 .t-panel-body {
     padding: 5px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .t-menu-other {
@@ -344,6 +346,12 @@ body {
     font-size: 14px;
     color: #444;
     line-height: 2;
+}
+
+.t-control input[type=radio],
+.t-control input[type=checkbox] {
+    width: 1em;
+    height: 1em;
 }
 
 .t-button-origin {
