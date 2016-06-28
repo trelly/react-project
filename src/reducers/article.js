@@ -2,7 +2,7 @@ const initialState = {
     content: ''
 };
 
-function article(state = initialState, action) {
+function articleReducer(state = initialState, action) {
     switch (action.type) {
         case 'SAVE_ARTICLE':
             return Object.assign({}, state, action.data);
@@ -11,4 +11,4 @@ function article(state = initialState, action) {
     }
 }
 
-export default article
+export default articleReducer

@@ -1,4 +1,4 @@
-export const SAVE_ARTICLE = 'SAVE_ARTICLE'
+import { SWITCH_MENU } from '../constants/ActionTypes'
 
 export function saveArticle(data) {
     return {
@@ -6,3 +6,12 @@ export function saveArticle(data) {
         data
     }
 }
+
+// 菜单切换
+export function switchMenu(index) {
+    return {
+        type: SWITCH_MENU,
+        index
+    };
+}
+

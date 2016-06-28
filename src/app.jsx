@@ -5,6 +5,7 @@ import { applyMiddleware, createStore } from 'redux'
 
 import Header from './containers/Header.jsx'
 import MenuSlider from './containers/Slider.jsx'
+import Panels from './containers/Panels.jsx'
 
 import reducer from './reducers'
 
@@ -19,17 +20,18 @@ const store = createStore(
 );
 
 class App extends Component {
-    showToast() {
-        this.refs.myToast.show();
-    }
-    showDialog() {
-        this.refs.myDialog.show();
+    constructor(props, context) {
+        super(props, context);
+        console.log(context)
     }
     render() {
         return (
             <div>
                 <Header></Header>
-                <MenuSlider tab="1"></MenuSlider>
+                <MenuSlider></MenuSlider>
+                <div className="t-main">
+                    <Panels />
+                </div>
             </div>
         )
     }

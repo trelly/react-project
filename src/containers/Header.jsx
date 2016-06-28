@@ -3,7 +3,6 @@
  * @desc 弹窗组件
  */
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classnames'
 
 class Header extends Component {
     constructor(props, context) {

@@ -10,13 +10,13 @@ class Menu extends Component {
         super(props, context);
     }
     render() {
-        let {title, icon, active, switchMenu, index} = this.props
+        let {title, icon, active, onClick} = this.props
         let className = classNames('t-menu', {
             'active': active
         })
         let iconClass = classNames('iconfont', icon);
         return (
-            <li className={className} onClick={switchMenu(index)}>
+            <li className={className} onClick={onClick}>
                 <i className={iconClass}></i>
                 <span className="t-icon-text">{title}</span>
             </li>

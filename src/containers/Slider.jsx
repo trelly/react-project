@@ -3,23 +3,21 @@
  * @desc 弹窗组件
  */
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classnames'
+import { connect } from 'react-redux'
+import { switchMenu } from '../actions'
+
 import MenuList from '../components/MenuList.jsx'
 
 class Slider extends Component {
     constructor(props, context) {
         super(props, context);
-        this.states = {
-            index: 1,
-            eyes: false,
-            night: false
-        }
     }
     render() {
+        const { dispatch } = this.props;
         return (
             <nav className="t-slider-left">
                 <div className="t-tab">
-                    <MenuList className="t-menu-bar">
+                    <MenuList className="t-menu-bar" onSwitchClick={index => dispatch(switchMenu(index))} currentIndex={this.props.menu.index}>
                         <div className="t-menu" icon="icon-articletab" title="文章"/>
                         <div className="t-menu" icon="icon-videotab" title="视频"/>
                         <div className="t-menu" icon="icon-pictab" title="图集"/>
@@ -39,4 +37,11 @@ class Slider extends Component {
     }
 }
 
-export default Slider
+// 这里的 state 是 Connect 的组件的
+function select(state) {
+    return {
+        menu: state.menu
+    };
+}
+
+export default connect(select)(Slider);
