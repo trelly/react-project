@@ -1,3 +1,6 @@
+export const FETCH_PROFILE = 'FETCH_PROFILE_SUCCESS'
+export const FETCH_PROFILE_FAIL = 'FETCH_PROFILE_FAIL'
+
 export const PUBLISH = 'PUBLISH'
 export const SAVE_DRAFT = 'SAVE_DRAFT'
 export const CANCEL_RELEASE = 'CANCEL_RELEASE'

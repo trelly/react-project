@@ -91,6 +91,10 @@ body {
     display: none;
 }
 
+.panel-slider-collapse .t-editor {
+    left: 0 !important;
+}
+
 .t-menu-bar {
     list-style: none;
     padding: 0;
@@ -235,7 +239,6 @@ body {
 .t-editor {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
     left: 280px;
@@ -304,7 +307,7 @@ body {
 }
 
 .t-panel-body {
-    padding: 5px 0;
+    padding: 5px 1px;
     overflow-x: hidden;
     overflow-y: auto;
 }

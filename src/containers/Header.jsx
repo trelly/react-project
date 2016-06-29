@@ -3,6 +3,7 @@
  * @desc 弹窗组件
  */
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 
 class Header extends Component {
     constructor(props, context) {
@@ -32,4 +33,10 @@ class Header extends Component {
     }
 }
 
-export default Header
+function stateMapToProps(state) {
+    return {
+        article: state.article
+    };
+}
+
+export default connect(stateMapToProps)(Header);

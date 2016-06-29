@@ -37,11 +37,10 @@ class Slider extends Component {
     }
 }
 
-// 这里的 state 是 Connect 的组件的
-function select(state) {
+function stateMapToProps(state) {
     return {
         menu: state.menu
     };
 }
 
-export default connect(select)(Slider);
+export default connect(stateMapToProps)(Slider);

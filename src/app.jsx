@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux'
 
 import Header from './containers/Header.jsx'
-import MenuSlider from './containers/Slider.jsx'
-import Panels from './containers/Panels.jsx'
+import Slider from './containers/Slider.jsx'
+import Content from './containers/Content.jsx'
 
 import reducer from './reducers'
 
@@ -22,16 +22,13 @@ const store = createStore(
 class App extends Component {
     constructor(props, context) {
         super(props, context);
-        console.log(context)
     }
     render() {
         return (
             <div>
                 <Header></Header>
-                <MenuSlider></MenuSlider>
-                <div className="t-main">
-                    <Panels />
-                </div>
+                <Slider></Slider>
+                <Content></Content>
             </div>
         )
     }

@@ -10,7 +10,7 @@ import classNames from 'classnames'
 import config from '../constants/TinyMceConfig'
 import ControlGroup from '../components/ControlGroup.jsx'
 
-class Panels extends Component {
+class Article extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -18,18 +18,17 @@ class Panels extends Component {
         }
     }
     toggle() {
-        console.log(1)
         this.setState({
             collapsed: !this.state.collapsed
         })
     }
     render() {
-        let panelShowClassName = classNames('t-content', {
+        let panelShowClassName = classNames({
             'panel-slider-collapse': this.state.collapsed
         })
         return (
-            <div>
-                <div className={panelShowClassName}>
+            <div className={panelShowClassName}>
+                <div className="t-content">
                     <div className="t-tab-content">
                         <div className="t-tab-item">
                             <div className="t-menu-collapse">
@@ -80,8 +79,8 @@ class Panels extends Component {
 // 这里的 state 是 Connect 的组件的
 function stateMapToProps(state) {
     return {
-        
+        article: state.article
     };
 }
 
-export default connect(stateMapToProps)(Panels);
+export default connect(stateMapToProps)(Article);
