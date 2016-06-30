@@ -13,11 +13,17 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 
+import {fetchPosts} from './actions'
+
 const logger = createLogger();
 const store = createStore(
     reducer,
     applyMiddleware(thunk, promise, logger)
 );
+
+store.dispatch(fetchPosts('user')).then(() =>
+    console.log(store.getState())
+)
 
 class App extends Component {
     constructor(props, context) {

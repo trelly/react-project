@@ -27,6 +27,13 @@ class Header extends Component {
                     <div className="t-message">
                         <i className="icon-message"></i>
                     </div>
+                    <div className="t-profile">
+                        <img width="50" src={this.props.media.avatar_url}/>
+                        <div>
+                            <span>{this.props.media.name}</span>
+                            <span>{this.props.media.name}</span>
+                        </div>
+                    </div>
                 </div>
             </header>
         )
@@ -35,7 +42,8 @@ class Header extends Component {
 
 function stateMapToProps(state) {
     return {
-        article: state.article
+        article: state.article,
+        media: state.media
     };
 }
 
