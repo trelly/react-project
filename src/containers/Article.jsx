@@ -9,6 +9,7 @@ import TinyMCE from 'react-tinymce'
 import classNames from 'classnames'
 import config from '../constants/TinyMceConfig'
 import ControlGroup from '../components/ControlGroup.jsx'
+import Button from '../components/Button.jsx'
 
 class Article extends Component {
     constructor(props, context) {
@@ -37,22 +38,27 @@ class Article extends Component {
                                 </Accordion>
                                 <Accordion title="功能">
                                     <ControlGroup label="原创">
-                                        原创
+                                        <Button>原创声明</Button>
                                     </ControlGroup>
                                     <ControlGroup label="广告">
                                         <input type="radio" value="" name="ad"/> <span>展示广告</span>
                                     </ControlGroup>
                                     <ControlGroup label="分类">
-                                        原创
+                                        <select name="tag">
+                                            <option value="0">选择分类</option>
+                                        </select>
                                     </ControlGroup>
                                     <ControlGroup label="封面">
-                                        原创
+                                        <div><input type="radio" value="" name="ad"/> <span>自动</span></div>
+                                        <div><input type="radio" value="" name="ad"/> <span>单图模式</span></div>
+                                        <div><input type="radio" value="" name="ad"/> <span>三图模式(仅在wifi模式下显示)</span></div>
                                     </ControlGroup>
                                     <ControlGroup label="定时发布">
-                                        原创
+                                        <div><input type="text" name="timer_time"/></div>
+                                        <div><span>设定时间2-24小时</span></div>
                                     </ControlGroup>
-                                    <ControlGroup label="封面">
-                                        原创
+                                    <ControlGroup label="弹窗">
+                                        <div><input type="radio" value="" name="ad"/> <span>弹窗</span></div>
                                     </ControlGroup>
                                 </Accordion>
                                 <Accordion title="模板">

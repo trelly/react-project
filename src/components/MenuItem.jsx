@@ -5,15 +5,15 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 
-class Button extends Component {
+class MenuItem extends Component {
     constructor(props, context) {
         super(props, context);
     }
     render() {
         return (
-            <button className="t-button-origin">{this.props.children}</button>
+            <li className="t-menu-item"><a target="inform" href="/message/#inform">通知</a></li>
         )
     }
 }
 
-export default Button
+export default MenuItem
