@@ -5,30 +5,48 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 
-class Button extends Component {
+class Dropdown extends Component {
     constructor(props, context) {
         super(props, context);
+        this.state = {
+            collapsed: true
+        }
+    }
+    show() {
+        this.setState({
+            collapsed: false
+        })
+    }
+    hide() {
+        this.setState({
+            collapsed: true
+        })
     }
     render() {
-        let {style} = this.props;
-        return (
-            <li className={style}>
+        let {ts} = this.props;
+        if (this.state.collapsed) {
+            return (
+                <li className={ts} onMouseEnter ={this.show.bind(this)}>
+                    <div className="t-menu-title">
+                        {this.props.children[0]}
+                    </div>
+                </li>
+            )
+        }
+        else {
+            return (<li className={ts} onMouseEnter ={this.show.bind(this)}>
                 <div className="t-menu-title">
-                    <i className="icon-message"></i>
+                    {this.props.children[0]}
                 </div>
-                <div className="t-dropdown">
+                <div className="t-dropdown" onMouseLeave={this.hide.bind(this)}>
                     <span className="t-dropdown-caret"></span>
                     <ul className="t-publish-menu">
-                        <li className="t-menu-item"><a target="inform" href="/message/#inform">通知</a></li>
-                        <li className="t-menu-item"><a target="inform" href="/comment/">评论</a></li>
-                        <li className="t-menu-item"><a target="inform" href="/message/#subscribe">订阅</a></li>
-                        <li className="t-menu-item"><a target="inform" href="/message/#collect">收藏</a></li>
-                        <li className="t-menu-item"><a target="inform" href="/message/#retransmit">转发</a></li>
+                        {this.props.children.slice(1)}
                     </ul>
                 </div>
-            </li>
-        )
+            </li>)
+        }
     }
 }
 
-export default Button
+export default Dropdown

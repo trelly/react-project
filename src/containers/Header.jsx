@@ -4,6 +4,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import Dropdown from '../components/Dropdown.jsx'
 
 class Header extends Component {
     constructor(props, context) {
@@ -14,33 +15,19 @@ class Header extends Component {
             <header className="t-header">
                 <div className="t-logo"></div>
                 <ul className="t-header-menu">
-                    <li className="t-publish">
-                        <div className="t-menu-title">
-                            <button className="t-publish-btn">发表 <span className="t-caret"></span></button>
-                        </div>
-                        <div className="t-dropdown">
-                            <span className="t-dropdown-caret"></span>
-                            <ul className="t-publish-menu">
-                                <li className="t-menu-item">存草稿</li>
-                                <li className="t-menu-item">取消发布</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li className="t-message" onClick="">
-                        <div className="t-menu-title">
-                            <i className="icon-message"></i>
-                        </div>
-                        <div className="t-dropdown">
-                            <span className="t-dropdown-caret"></span>
-                            <ul className="t-publish-menu">
-                                <li className="t-menu-item"><a target="inform" href="/message/#inform">通知</a></li>
-                                <li className="t-menu-item"><a target="inform" href="/comment/">评论</a></li>
-                                <li className="t-menu-item"><a target="inform" href="/message/#subscribe">订阅</a></li>
-                                <li className="t-menu-item"><a target="inform" href="/message/#collect">收藏</a></li>
-                                <li className="t-menu-item"><a target="inform" href="/message/#retransmit">转发</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                    <Dropdown ts="t-publish">
+                        <button className="t-publish-btn">发表 <span className="t-caret"></span></button>
+                        <li className="t-menu-item">存草稿</li>
+                        <li className="t-menu-item">取消发布</li>
+                    </Dropdown>
+                    <Dropdown ts="t-message">
+                        <i className="icon-message"></i>
+                        <li className="t-menu-item"><a target="inform" href="/message/#inform">通知</a></li>
+                        <li className="t-menu-item"><a target="inform" href="/comment/">评论</a></li>
+                        <li className="t-menu-item"><a target="inform" href="/message/#subscribe">订阅</a></li>
+                        <li className="t-menu-item"><a target="inform" href="/message/#collect">收藏</a></li>
+                        <li className="t-menu-item"><a target="inform" href="/message/#retransmit">转发</a></li>
+                    </Dropdown>
                     <li className="t-profile">
                         <div className="t-profile-info">
                             <div><span className="t-profile-type">{this.props.media.name}</span></div>
