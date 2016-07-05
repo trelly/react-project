@@ -21,7 +21,7 @@ export function switchMenu(index) {
 export function toggleDialog(status) {
     return {
         type: DIALOG_STATUS,
-        status: 'show'
+        status: status || 'show'
     }
 }
 

@@ -5,6 +5,7 @@ import ControlGroup from '../components/ControlGroup.jsx'
 import Button from '../components/Button.jsx'
 import Dialog from '../components/Dialog.jsx'
 import Wizard from '../components/Wizard.jsx'
+import { toggleDialog } from '../actions'
 import './origin.css'
 
 class Origin extends Component {
@@ -12,6 +13,7 @@ class Origin extends Component {
         super(props, context)
     }
     render () {
+        const { dispatch } = this.props;
         return (
             <div>
                 <Dialog toggleStatus={this.props.toggleStatus.status}>
@@ -19,7 +21,7 @@ class Origin extends Component {
                         <div className="dialog-content">
                             <div className="dialog-header">
                                 <div>
-                                    <span className="t-dialog-close" onClick={()=>this.setState({closed: true})}>&#10006;</span>
+                                    <span className="t-dialog-close" onClick={() => dispatch(toggleDialog('hide'))}>&#10006;</span>
                                 </div>
                                 <div className='nav_arrow'>
                                     <span className="cur left">
@@ -66,14 +68,38 @@ class Origin extends Component {
                                         <p className="space-blank">
                                             头条号鼓励用户发表原创文章，尊重原创作者的权益。
                                         </p>
+                                        <div className="edit-btns">
+                                            <Button HandleClick={() => dispatch(toggleDialog('hide'))}>取消</Button>
+                                            <Button>下一步</Button>
+                                        </div>
                                     </div>
                                     <div className="origin-content">
+                                        <ul className="apply_create_form">
+                                            <li>
+                                                <label>头条号首发</label>
+                                                <div className="edit-input apply_create_first">
+                                                    <div className="form1_checkbox apply_create_yes_radio">首发</div>
+                                                </div>
+                                                <div className="form1_checkbox apply_create_no_radio">非首发</div>
+                                            </li>
+                                            <li className="origin_mp origin_active">
+                                                <label>平台名称</label><input data-name="debut_mp" type="text" />
+                                            </li>
+                                            <li className="origin_mp origin_active">
+                                                <label>作者</label><input data-name="debut_author" type="text" />
+                                            </li>
 
+                                            
+                                        </ul>
+                                        <div className="edit-btns">
+                                            <Button HandleClick={() => console.log(';luo')}>上一步</Button>
+                                            <Button HandleClick={() => dispatch(toggleDialog('hide'))}>确定</Button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="dialog-footer">
-                                <Wizard />
+
                             </div>
                         </div>
                     </div>
