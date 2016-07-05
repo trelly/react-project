@@ -4,6 +4,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
+import Button from './Button.jsx'
 
 class Wizard extends Component {
     constructor(props) {

@@ -1,0 +1,94 @@
+.modal-dialog {
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    background-clip: padding-box;
+}
+
+.dialog-content {
+    
+}
+.t-dialog-close {
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.dialog-body {
+    margin: 0 auto;
+    width: 800px;
+    overflow: hidden;
+    font-size: 14px;
+    color: rgb(89, 89 , 89);
+    padding: 20px;
+    text-align: center;
+}
+
+.nav_arrow {
+    width: 337px;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 0;
+    line-height: 48px;
+    height: 48px;
+    margin: 0 auto;
+    /*margin-bottom: 30px;*/
+}
+
+.nav_arrow span{
+    display: inline-block;
+    position: relative;
+    width: 190px;
+    height: 46px;
+    font-size: 16px;
+    background-color: #fff;
+    text-align: center;
+    z-index: 2;
+    /*background: url("/assets/static/images/logo.png") no-repeat;*/
+}
+
+.nav_arrow .cur {
+    /*color: #fff;*/
+    /*background-image: url("/assets/static/images/logo.png");*/
+}
+
+.nav_arrow span i {
+    float: right;
+    display: block;
+    height:0px;
+    width:0px;
+    border: 24px solid #ff635c;
+    border-right-width: 0px;
+    border-left-color: #fff;
+}
+
+.nav_arrow .right {
+    left: -18px;
+    z-index: 1;
+}
+
+.origin-slide {
+    margin-left: 0px;
+    width: 1608px;
+}
+.origin-notice, .origin-content {
+    width: 800px;
+    display: inline-block;
+}
+
+.origin-notice p {
+    text-align: left;
+}
+
+.space-blank {
+    margin-top: 30px;
+}
+.dialog-footer {
+    height: 30px;
+}

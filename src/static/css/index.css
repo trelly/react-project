@@ -33,7 +33,7 @@ a:hover {
     padding: 17px 28px 0 23px;
     height: 70px;
     background: #fff;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .t-logo {
@@ -55,7 +55,7 @@ a:hover {
     position: absolute;
     bottom: 0;
     top: 70px;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .t-collapse {
@@ -449,4 +449,17 @@ a:hover {
 
 .t-menu-title {
     text-align: center;
+}
+
+
+
+.t-mask {
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2030;
+    background-color: #000;
 }

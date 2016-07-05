@@ -10,6 +10,8 @@ import classNames from 'classnames'
 import config from '../constants/TinyMceConfig'
 import ControlGroup from '../components/ControlGroup.jsx'
 import Button from '../components/Button.jsx'
+import Origin from './Origin.jsx'
+import { toggleDialog } from '../actions'
 
 class Article extends Component {
     constructor(props, context) {
@@ -24,6 +26,7 @@ class Article extends Component {
         })
     }
     render() {
+        const { dispatch } = this.props;
         let panelShowClassName = classNames({
             'panel-slider-collapse': this.state.collapsed
         })
@@ -38,7 +41,7 @@ class Article extends Component {
                                 </Accordion>
                                 <Accordion title="功能">
                                     <ControlGroup label="原创">
-                                        <Button>原创声明</Button>
+                                        <Button HandleClick={() => dispatch(toggleDialog())}>原创声明</Button>
                                     </ControlGroup>
                                     <ControlGroup label="广告">
                                         <input type="radio" value="" name="ad"/> <span>展示广告</span>
@@ -85,7 +88,8 @@ class Article extends Component {
 // 这里的 state 是 Connect 的组件的
 function stateMapToProps(state) {
     return {
-        article: state.article
+        article: state.article,
+        toggleStatus: state.origin
     };
 }
 

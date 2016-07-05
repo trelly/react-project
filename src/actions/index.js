@@ -1,4 +1,4 @@
-import { SWITCH_MENU, FETCH_PROFILE } from '../constants/ActionTypes'
+import { SWITCH_MENU, FETCH_PROFILE, DIALOG_STATUS } from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
 import 'babel-polyfill'
 
@@ -15,6 +15,14 @@ export function switchMenu(index) {
         type: SWITCH_MENU,
         index
     };
+}
+
+// 对话框展示隐藏
+export function toggleDialog(status) {
+    return {
+        type: DIALOG_STATUS,
+        status: 'show'
+    }
 }
 
 // 获取用户信息

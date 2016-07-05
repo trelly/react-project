@@ -6,6 +6,7 @@ import { applyMiddleware, createStore } from 'redux'
 import Header from './containers/Header.jsx'
 import Slider from './containers/Slider.jsx'
 import Content from './containers/Content.jsx'
+import Origin from './containers/Origin.jsx'
 
 import reducer from './reducers'
 
@@ -32,6 +33,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <Origin />
                 <Header></Header>
                 <Slider></Slider>
                 <Content></Content>

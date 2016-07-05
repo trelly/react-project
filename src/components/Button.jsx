@@ -9,9 +9,14 @@ class Button extends Component {
     constructor(props, context) {
         super(props, context);
     }
+    HandleClick() {
+        if(this.props.HandleClick) {
+            this.props.HandleClick();
+        }
+    }
     render() {
         return (
-            <button className="t-button-origin">{this.props.children}</button>
+            <button className="t-button-origin" onClick={this.HandleClick.bind(this)}>{this.props.children}</button>
         )
     }
 }

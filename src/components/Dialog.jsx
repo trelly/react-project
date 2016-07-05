@@ -4,28 +4,29 @@
  */
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
+import './dialog.css'
 
 class Dialog extends Component {
     constructor(props, context) {
         super(props, context);
-        this.state = {
-            closed: true
-        };
+        // this.state = {
+        //     closed: true
+        // };
     }
-    show() {
-        this.setState({
-            closed: false
-        })
-    }
+    // show() {
+    //     this.setState({
+    //         closed: false
+    //     })
+    // }
     render() {
-        if (!this.state.closed) {
+        if (this.props.toggleStatus === 'show') {
             return (
-                <div class="t-dialog">
-                    <div>
-                        <span class="t-dialog-close" onClick={()=>this.setState({closed: true})}>X</span>
-                    </div>
-                    <div>
-                        {this.props.children}
+                <div>
+                    <div className="t-mask"></div>
+                    <div className="t-container">
+                        <div className="t-dialog">
+                            {this.props.children}
+                        </div>
                     </div>
                 </div>
             )
