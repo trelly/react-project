@@ -26,7 +26,7 @@ class Dropdown extends Component {
         let {ts} = this.props;
         if (this.state.collapsed) {
             return (
-                <li className={ts} onMouseEnter ={this.show.bind(this)}>
+                <li className={ts} onClick={this.show.bind(this)}>
                     <div className="t-menu-title">
                         {this.props.children[0]}
                     </div>
@@ -34,7 +34,7 @@ class Dropdown extends Component {
             )
         }
         else {
-            return (<li className={ts} onMouseEnter ={this.show.bind(this)}>
+            return (<li className={ts} onFocus={this.show.bind(this)} onBlur={this.hide.bind(this)}>
                 <div className="t-menu-title">
                     {this.props.children[0]}
                 </div>

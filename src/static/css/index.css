@@ -164,6 +164,9 @@ a:hover {
 .icon-message {
     width: 23px;
     height: 18px;
+    outline: none;
+    border: none;
+    cursor: pointer;
     display: inline-block;
     background: url("/assets/static/images/message.png");
 }

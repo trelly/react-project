@@ -21,7 +21,7 @@ class Header extends Component {
                         <li className="t-menu-item">取消发布</li>
                     </Dropdown>
                     <Dropdown ts="t-message">
-                        <i className="icon-message"></i>
+                        <button className="icon-message"></button>
                         <li className="t-menu-item"><a target="inform" href="/message/#inform">通知</a></li>
                         <li className="t-menu-item"><a target="inform" href="/comment/">评论</a></li>
                         <li className="t-menu-item"><a target="inform" href="/message/#subscribe">订阅</a></li>
