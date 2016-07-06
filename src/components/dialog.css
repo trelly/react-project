@@ -22,14 +22,14 @@
 }
 .t-dialog {
     width: 880px;
-    height: 576px;
+    height: 579px;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     margin: auto;
-    padding: 10px;
+    /*padding: 10px;*/
     transition: transform .3s ease-out;
     z-index: 1050;
 }

@@ -1,3 +1,6 @@
+p {
+    margin: 0px;
+}
 .modal-dialog {
     height: 100%;
     position: relative;
@@ -7,6 +10,7 @@
     outline: 0;
     box-shadow: 0 3px 9px rgba(0,0,0,.5);
     background-clip: padding-box;
+    padding: 20px;
 }
 
 .dialog-content {
@@ -26,7 +30,7 @@
     overflow: hidden;
     font-size: 14px;
     color: rgb(89, 89 , 89);
-    /*padding: 20px;*/
+    /*padding: 10px;*/
     text-align: center;
 }
 
@@ -38,10 +42,10 @@
     line-height: 48px;
     height: 48px;
     margin: 0 auto;
-    /*margin-bottom: 30px;*/
+    margin-bottom: 30px;
 }
 
-.nav_arrow span{
+/*.nav_arrow span{
     display: inline-block;
     position: relative;
     width: 190px;
@@ -50,19 +54,20 @@
     background-color: #fff;
     text-align: center;
     z-index: 2;
-    /*background: url("/assets/static/images/logo.png") no-repeat;*/
+    background: url("/assets/static/images/original_create_arrow1.png") no-repeat;
 }
 
-.nav_arrow .cur {
-    /*color: #fff;*/
-    /*background-image: url("/assets/static/images/logo.png");*/
-}
+.current {
+    /*color: red;
+    color: #fff;
+    background-image: url("/assets/static/images/original_create_arrow.png");
+}*/
 
 .nav_arrow span i {
     float: right;
     display: block;
-    height:0px;
-    width:0px;
+    height: 0px;
+    width: 0px;
     border: 24px solid #ff635c;
     border-right-width: 0px;
     border-left-color: #fff;
@@ -74,8 +79,16 @@
 }
 
 .origin-slide {
-    margin-left: -800px;
+    /*margin-left: -800px;*/
+    
+}
+.origin-slide-next {
     width: 1608px;
+    margin-left: -800px;
+}
+.origin-slide-pre {
+    width: 1608px;
+    margin-left: 0px;
 }
 .origin-notice, .origin-content {
     width: 800px;
@@ -84,6 +97,7 @@
 
 .origin-notice p {
     text-align: left;
+    line-height: 20px;
 }
 
 .space-blank {
@@ -94,14 +108,18 @@
 .apply_create_form {
     width: 470px;
     margin: 0 auto;
+    height: 300px;
 }
 .apply_create_form li {
+    display: none;
     list-style: none;
     list-style-type: none;
     margin-bottom: 20px;
     line-height: 56px;
 }
-
+.apply_create_form .origin_active {
+    display: block;
+}
 .apply_create_form li:first-child {
     display: block;
 }
@@ -124,6 +142,38 @@
     border: 1px solid #e9e9e9;
     border-radius: 5px;
 }
+.edit-btns {
+    margin-top: 66px;
+}
+.btns {
+    margin-top: 0px;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    line-height: 40px;
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #9e9e9e;
+    margin-left: 23px;
+    cursor: pointer;
+    background: #f4f5f7;
+}
+.cancel-btn, .pre-btn {
+    margin-right: 23px;
+}
+.next-btn, .ok-btn {
+    color: #fff;
+    background: #ff635c;
+}
 .dialog-footer {
     height: 30px;
+}
+
+
+
+.item-ad {
+    color: #9e9e9e;
 }

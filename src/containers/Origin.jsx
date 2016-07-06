@@ -4,16 +4,80 @@ import classNames from 'classnames'
 import ControlGroup from '../components/ControlGroup.jsx'
 import Button from '../components/Button.jsx'
 import Dialog from '../components/Dialog.jsx'
-import Wizard from '../components/Wizard.jsx'
 import { toggleDialog } from '../actions'
 import './origin.css'
 
 class Origin extends Component {
     constructor(props, context) {
         super(props, context)
+        this.state = {
+            slideClass: 'origin-slide-pre',
+            index: 0,
+            platform: 'mp'
+        }
+    }
+    nextHandleClick() {
+        this.setState (
+            {
+                slideClass : 'origin-slide-next',
+                index: 1
+            }
+        );
+    }
+    preHandleClick() {
+        this.setState (
+            {
+                slideClass : 'origin-slide-pre',
+                index: 0
+            }
+        );
+    }
+    mpClick() {
+        console.log('mp');
+        this.setState (
+            {
+                platform: 'mp'
+            }
+        );
+    }
+    otherClick() {
+        console.log('other');
+        this.setState (
+            {
+                platform: 'other'
+            }
+        );
+    }
+    okClick() {
+        const { dispatch } = this.props;
+        dispatch(toggleDialog('hide'));
+        this.setState({
+            slideClass: 'origin-slide-pre',
+            index: 0,
+            platform: 'mp'
+        });
+    }
+    cancelClick() {
+        const { dispatch } = this.props;
+        dispatch(toggleDialog('hide'));
+        this.setState({
+            slideClass: 'origin-slide-pre',
+            index: 0,
+            platform: 'mp'
+        });
+    }
+    closeClick() {
+        const { dispatch } = this.props;
+        dispatch(toggleDialog('hide'));
+        this.setState({
+            slideClass: 'origin-slide-pre',
+            index: 0,
+            platform: 'mp'
+        });
     }
     render () {
         const { dispatch } = this.props;
+        let that = this;
         return (
             <div>
                 <Dialog toggleStatus={this.props.toggleStatus.status}>
@@ -21,19 +85,19 @@ class Origin extends Component {
                         <div className="dialog-content">
                             <div className="dialog-header">
                                 <div>
-                                    <span className="t-dialog-close" onClick={() => dispatch(toggleDialog('hide'))}>&#10006;</span>
+                                    <span className="t-dialog-close" onClick={this.closeClick.bind(this)}>&#10006;</span>
                                 </div>
                                 <div className='nav_arrow'>
-                                    <span className="cur left">
+                                    <span className={"left" + (this.state.index === 0 ? " current" : "")}>
                                         原创声明须知
                                     </span>
-                                    <span className="right">
+                                    <span className={"right" + (this.state.index === 1 ? " current" : "")}>
                                         原创声明信息
                                     </span>
                                 </div>
                             </div>
                             <div className="dialog-body">
-                                <div className="origin-slide">
+                                <div className={this.state.slideClass}>
                                     <div className="origin-notice">
                                         <p>
                                             原创声明功能适用的内容是指作者独立完成创作的作品。
@@ -69,8 +133,8 @@ class Origin extends Component {
                                             头条号鼓励用户发表原创文章，尊重原创作者的权益。
                                         </p>
                                         <div className="edit-btns">
-                                            <Button HandleClick={() => dispatch(toggleDialog('hide'))}>取消</Button>
-                                            <Button>下一步</Button>
+                                            <Button className="btns cancel-btn" HandleClick={this.cancelClick.bind(this)}>取消</Button>
+                                            <Button className="btns next-btn" HandleClick={this.nextHandleClick.bind(this)}>下一步</Button>
                                         </div>
                                     </div>
                                     <div className="origin-content">
@@ -78,28 +142,33 @@ class Origin extends Component {
                                             <li>
                                                 <label>头条号首发</label>
                                                 <div className="edit-input apply_create_first">
-                                                    <div className="form1_checkbox apply_create_yes_radio">首发</div>
+                                                    <div className={"form1_checkbox" + (this.state.platform === "mp" ? " checked" : "")} onClick={this.mpClick.bind(this)}>首发</div>
                                                 </div>
-                                                <div className="form1_checkbox apply_create_no_radio">非首发</div>
+                                                <div className={ "form1_checkbox" + (this.state.platform === "other" ? " checked" : "") } onClick={this.otherClick.bind(this)}>非首发</div>
                                             </li>
-                                            <li className="origin_mp origin_active">
+                                            <li className={ "origin_mp" + (this.state.platform === "mp" ? " origin_active" : "") }>
                                                 <label>平台名称</label><input data-name="debut_mp" type="text" />
                                             </li>
-                                            <li className="origin_mp origin_active">
+                                            <li className={ "origin_mp" + (this.state.platform === "mp" ? " origin_active" : "") }>
                                                 <label>作者</label><input data-name="debut_author" type="text" />
                                             </li>
 
-                                            
+                                            <li className={ "origin_other" + (this.state.platform === "other" ? " origin_active" : "") }>
+                                                <label>首发链接</label><input data-name="debut_url" type="text" placeholder="文章首发平台链接" />
+                                            </li>
+                                            <li className={ "origin_other" + (this.state.platform === "other" ? " origin_active" : "") }>
+                                                <label>首发平台</label><input data-name="debut_platform" type="text" placeholder="文章首发平台名称" />
+                                            </li>
+                                            <li className={ "origin_other" + (this.state.platform === "other" ? " origin_active" : "") }>
+                                                <label>作者名称</label><input data-name="debut_other_author" type="text" placeholder="在该平台的作者名称" />
+                                            </li>
                                         </ul>
                                         <div className="edit-btns">
-                                            <Button HandleClick={() => console.log(';luo')}>上一步</Button>
-                                            <Button HandleClick={() => dispatch(toggleDialog('hide'))}>确定</Button>
+                                            <Button  className="btns pre-btn" HandleClick={this.preHandleClick.bind(this)}>上一步</Button>
+                                            <Button  className="btns ok-btn" HandleClick={this.okClick.bind(this)}>确定</Button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="dialog-footer">
-
                             </div>
                         </div>
                     </div>

@@ -12,6 +12,7 @@ import ControlGroup from '../components/ControlGroup.jsx'
 import Button from '../components/Button.jsx'
 import Origin from './Origin.jsx'
 import { toggleDialog } from '../actions'
+import './origin.css'
 
 class Article extends Component {
     constructor(props, context) {
@@ -44,7 +45,9 @@ class Article extends Component {
                                         <Button HandleClick={() => dispatch(toggleDialog())}>原创声明</Button>
                                     </ControlGroup>
                                     <ControlGroup label="广告">
-                                        <input type="radio" value="" name="ad"/> <span>展示广告</span>
+                                        <div className="item-ad">
+                                            展示广告
+                                        </div>
                                     </ControlGroup>
                                     <ControlGroup label="分类">
                                         <select name="tag">

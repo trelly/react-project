@@ -15,8 +15,9 @@ class Button extends Component {
         }
     }
     render() {
+        const { className } = this.props;
         return (
-            <button className="t-button-origin" onClick={this.HandleClick.bind(this)}>{this.props.children}</button>
+            <button className={ "t-button-origin" + (className ? " " + className : '')} onClick={this.HandleClick.bind(this)}>{this.props.children}</button>
         )
     }
 }
