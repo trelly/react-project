@@ -3,11 +3,9 @@ body {
     margin: 0;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
     color: #00B7FF;
 }
-
 .pgc-header {
     display: block;
     height: 50px;
@@ -29,18 +27,15 @@ a {
     padding-right: 300px;
     overflow-y: auto;
 }
-
 .pgc-editor {
     position: relative;
     overflow: hidden;
     margin: 0 0 10px 10px;
     padding-top: 30px;
 }
-
 .pgc-title {
     width: 100%;
 }
-
 .pgc-form-title {
     width: 100%;
     line-height: 1.5em;
@@ -49,6 +44,7 @@ a {
 }
 
 /*侧边栏*/
+
 .pgc-slider {
     position: fixed;
     top: 50px;
@@ -60,28 +56,23 @@ a {
     overflow: auto;
     overflow-x: hidden;
 }
-
 .pgc-slider-wrap {
     margin: 20px 10px;
     text-align: center;
 }
-
 .pgc-tab-content {
     padding: 10px;
     overflow: hidden;
     overflow-y: auto;
 }
-
 .pgc-label {
     width: 10em;
     display: inline-block;
 }
-
 .pgc-switch {
     margin-top: 10px;
     height: 30px;
 }
-
 .t-toast {
     position: fixed;
     top: 50%;

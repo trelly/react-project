@@ -2,9 +2,9 @@
  * @file Dialog.jsx
  * @desc 弹窗组件
  */
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { switchMenu } from '../actions'
+import React, {Component, PropTypes} from 'react'
+import {connect} from 'react-redux'
+import {switchMenu} from '../actions'
 
 import MenuList from '../components/MenuList.jsx'
 
@@ -13,7 +13,7 @@ class Slider extends Component {
         super(props, context);
     }
     render() {
-        const { dispatch } = this.props;
+        const {dispatch} = this.props;
         return (
             <nav className="t-slider-left">
                 <div className="t-tab">
@@ -38,9 +38,7 @@ class Slider extends Component {
 }
 
 function stateMapToProps(state) {
-    return {
-        menu: state.menu
-    };
+    return {menu: state.menu};
 }
 
 export default connect(stateMapToProps)(Slider);

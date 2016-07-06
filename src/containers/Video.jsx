@@ -2,8 +2,8 @@
  * @file Dialog.jsx
  * @desc 弹窗组件
  */
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React, {Component, PropTypes} from 'react'
+import {connect} from 'react-redux'
 import Accordion from '../components/Accordion.jsx'
 import TinyMCE from 'react-tinymce'
 import classNames from 'classnames'
@@ -18,9 +18,7 @@ class Video extends Component {
         }
     }
     render() {
-        let panelShowClassName = classNames({
-            'panel-slider-collapse': this.state.collapsed
-        })
+        let panelShowClassName = classNames({'panel-slider-collapse': this.state.collapsed})
         return (
             <div>
                 视频上传
@@ -31,9 +29,7 @@ class Video extends Component {
 
 // 这里的 state 是 Connect 的组件的
 function stateMapToProps(state) {
-    return {
-        
-    };
+    return {};
 }
 
 export default connect(stateMapToProps)(Video);

@@ -2,8 +2,8 @@
  * @file Dialog.jsx
  * @desc 弹窗组件
  */
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React, {Component, PropTypes} from 'react'
+import {connect} from 'react-redux'
 
 import PanelList from '../components/PanelList.jsx'
 import Article from './Article.jsx'
@@ -16,7 +16,7 @@ class Content extends Component {
         super(props, context);
     }
     render() {
-        const { menu } = this.props;
+        const {menu} = this.props;
         return (
             <div className="t-main">
                 <PanelList active={menu.index}>
@@ -31,9 +31,7 @@ class Content extends Component {
 }
 
 function stateMapToProps(state) {
-    return {
-        menu: state.menu
-    };
+    return {menu: state.menu};
 }
 
 export default connect(stateMapToProps)(Content);

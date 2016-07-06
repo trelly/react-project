@@ -14,7 +14,8 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 
-import {fetchPosts} from './actions'
+import {fetchMediaPosts, fetchUserPosts} from './actions'
+import './static/css/component.css'
 
 const logger = createLogger();
 const store = createStore(
@@ -22,7 +23,11 @@ const store = createStore(
     applyMiddleware(thunk, promise, logger)
 );
 
-store.dispatch(fetchPosts('user')).then(() =>
+store.dispatch(fetchMediaPosts()).then(() =>
+    console.log(store.getState())
+)
+
+store.dispatch(fetchUserPosts()).then(() =>
     console.log(store.getState())
 )
 
