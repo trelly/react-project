@@ -493,7 +493,6 @@ a:hover {
     cursor: not-allowed;
 }
 
-
 .t-mask {
     opacity: .5;
     position: fixed;
@@ -503,4 +502,17 @@ a:hover {
     left: 0;
     z-index: 2030;
     background-color: #000;
+}
+
+.ad-radio, .popup-radio {
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    background: url("/assets/static/images/checkbox.png") no-repeat 0 center;
+}
+.ad-radio.selected, .popup-radio.selected {
+    background: url("/assets/static/images/checkbox_checked.png") no-repeat 0 center;
 }

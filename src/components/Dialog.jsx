@@ -9,15 +9,7 @@ import './dialog.css'
 class Dialog extends Component {
     constructor(props, context) {
         super(props, context);
-        // this.state = {
-        //     closed: true
-        // };
     }
-    // show() {
-    //     this.setState({
-    //         closed: false
-    //     })
-    // }
     render() {
         if (this.props.toggleStatus === 'show') {
             return (

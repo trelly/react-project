@@ -8,6 +8,7 @@ const initialState = {
     save: 0,
     pgc_id: '', //pgc文章id
     show_ads: 0, //是否显示广告
+    push_status: 0,//是否弹窗
     force_ads:2,
     after_pass_modify:0,
     urgent_push:0,
@@ -16,7 +17,7 @@ const initialState = {
     pgc_feed_covers:[],
     timer_status:0, //是否定时发布[0]否,[1]是
     timer_time: '', //定时发布时间
-    claim_origin:1, //
+    claim_origin:0, //
     slave_title: '', //子标题
     is_abtest:0, //是否采用abtest发布
     slave_item_id:0

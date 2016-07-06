@@ -11,7 +11,7 @@ import config from '../constants/TinyMceConfig'
 import ControlGroup from '../components/ControlGroup.jsx'
 import Button from '../components/Button.jsx'
 import Origin from './Origin.jsx'
-import { toggleDialog } from '../actions'
+import { toggleDialog, saveArticle } from '../actions'
 import './origin.css'
 
 class Article extends Component {
@@ -42,10 +42,12 @@ class Article extends Component {
                                 </Accordion>
                                 <Accordion title="功能">
                                     <ControlGroup label="原创">
-                                        <Button HandleClick={() => dispatch(toggleDialog())}>原创声明</Button>
+                                            <div className={ "origin-status" + (this.props.article.claim_origin ? " article-active" : "") }>已申请原创标签</div>
+                                            <Button className={ "origin-status" + (this.props.article.claim_origin ? "" : " article-active") } HandleClick={() => dispatch(toggleDialog())}>原创声明</Button>
                                     </ControlGroup>
                                     <ControlGroup label="广告">
-                                        <div className="item-ad">
+                                        <div className="t-ad-item">
+                                            <i className={ "ad-radio" + (this.props.article.show_ads ? ' selected' : "") } onClick={() => dispatch( saveArticle({ show_ads: !this.props.article.show_ads }) )}></i>
                                             展示广告
                                         </div>
                                     </ControlGroup>
@@ -64,7 +66,11 @@ class Article extends Component {
                                         <div><span>设定时间2-24小时</span></div>
                                     </ControlGroup>
                                     <ControlGroup label="弹窗">
-                                        <div><input type="radio" value="" name="ad"/> <span>弹窗</span></div>
+                                        <div className="t-popup-item">
+                                            <i className={ "popup-radio" + (this.props.article.push_status ? ' selected' : "") } onClick={() => dispatch( saveArticle({ push_status: !this.props.article.push_status }) )}></i>
+                                            <span>弹窗申请</span>
+                                            <a className={ "push-message" + (this.props.article.push_status ? " article-active" : "")}>修改推送信息</a>
+                                        </div>
                                     </ControlGroup>
                                 </Accordion>
                                 <Accordion title="模板">

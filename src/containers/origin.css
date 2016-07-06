@@ -173,7 +173,19 @@ p {
 }
 
 
-
-.item-ad {
+.t-ad-item {
+    font-size: 14px;
     color: #9e9e9e;
+}
+.origin-status {
+    display: none;
+}
+.push-message {
+    display: none;
+    color: #385993;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.article-active {
+    display: inline-block;
 }

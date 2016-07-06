@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import ControlGroup from '../components/ControlGroup.jsx'
 import Button from '../components/Button.jsx'
 import Dialog from '../components/Dialog.jsx'
-import { toggleDialog } from '../actions'
+import { toggleDialog, saveArticle } from '../actions'
 import './origin.css'
 
 class Origin extends Component {
@@ -51,6 +51,7 @@ class Origin extends Component {
     okClick() {
         const { dispatch } = this.props;
         dispatch(toggleDialog('hide'));
+        dispatch(saveArticle({ claim_origin: 1}))
         this.setState({
             slideClass: 'origin-slide-pre',
             index: 0,
