@@ -40,7 +40,6 @@
     "redux-logger": "^2.6.1",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
-    "tinymce": "^4.3.12"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
