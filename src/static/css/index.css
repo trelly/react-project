@@ -45,10 +45,12 @@ a:hover {
 
 .t-main {
     position: fixed;
+    /*position: absolute;*/
     top: 70px;
     right: 0;
     bottom: 0;
     left: 70px;
+    z-index: 100;
 }
 
 .t-slider-left {
@@ -366,8 +368,6 @@ a:hover {
     opacity: .8;
 }
 
-/*form*/
-
 .t-control-group {
     margin-bottom: 10px;
 }
@@ -452,7 +452,7 @@ a:hover {
 }
 
 
-.nav_arrow span{
+.nav-arrow span{
     display: inline-block;
     position: relative;
     width: 190px;
@@ -464,13 +464,12 @@ a:hover {
     background: url("/assets/static/images/original_create_arrow1.png") no-repeat;
 }
 
-.nav_arrow .current {
-    /*color: red;*/
+.nav-arrow .current {
     color: #fff;
     background-image: url("/assets/static/images/original_create_arrow.png");
 }
 
-.form1_checkbox {
+.form1-checkbox {
     min-width: 18px;
     min-height: 18px;
     cursor: pointer;
@@ -481,19 +480,20 @@ a:hover {
     text-indent: 25px;
     background: url("/assets/static/images/checkbox.png") no-repeat 0 center;
 }
-.form1_checkbox.active,
-.form1_checkbox.checked {
+.form1-checkbox.active,
+.form1-checkbox.checked {
     background-image: url("/assets/static/images/checkbox_checked.png");
 }
-.form1_checkbox.active.disabled,
-.form1_checkbox.checked.disabled {
+.form1-checkbox.active.disabled,
+.form1-checkbox.checked.disabled {
     background-image: url("/assets/static/images/checkbox_checked_disabled.png");
 }
-.form1_checkbox.disabled {
+.form1-checkbox.disabled {
     cursor: not-allowed;
 }
 
 .t-mask {
+    /*display: none;*/
     opacity: .5;
     position: fixed;
     top: 0;
@@ -501,9 +501,12 @@ a:hover {
     bottom: 0;
     left: 0;
     z-index: 2030;
+    /*z-index: 100;*/
     background-color: #000;
 }
-
+.mask-active {
+    display: block;
+}
 .ad-radio, .popup-radio {
     float: left;
     width: 18px;

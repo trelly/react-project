@@ -11,12 +11,13 @@ class Dialog extends Component {
         super(props, context);
     }
     render() {
+        const { dialogClass } = this.props;
         if (this.props.toggleStatus === 'show') {
             return (
                 <div>
                     <div className="t-mask"></div>
                     <div className="t-container">
-                        <div className="t-dialog">
+                        <div className={dialogClass}>
                             {this.props.children}
                         </div>
                     </div>
