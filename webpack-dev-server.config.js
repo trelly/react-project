@@ -50,6 +50,10 @@ module.exports = {
                 to: 'tinymce'
             },
             {
+                from: path.resolve(__dirname, 'src/static/tinymce'),
+                to: 'tinymce'
+            },
+            {
                 from: path.resolve(__dirname, 'node_modules/bootstrap'),
                 to: 'bootstrap'
             },
@@ -58,7 +62,7 @@ module.exports = {
                 to: 'static/css'
             },
             {
-                from: path.resolve(__dirname, 'src/static/langs'),
+                from: path.resolve(__dirname, 'src/static/tinymce/langs'),
                 to: 'tinymce/langs'
             },
             {
