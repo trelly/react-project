@@ -23,11 +23,11 @@ export function switchMenu(index) {
     };
 }
 
-// 对话框展示隐藏 原创
-export function toggleDialog(status) {
+// 对话框展示隐藏
+export function toggleDialog(data) {
     return {
         type: DIALOG_STATUS,
-        status: status || 'show'
+        data
     }
 }
 

@@ -16,6 +16,7 @@ class Origin extends Component {
             platform: 'mp'
         }
     }
+    /*原创下一步点击处理*/
     nextHandleClick() {
         this.setState (
             {
@@ -24,6 +25,7 @@ class Origin extends Component {
             }
         );
     }
+    /*原创上一步点击处理*/
     preHandleClick() {
         this.setState (
             {
@@ -32,6 +34,7 @@ class Origin extends Component {
             }
         );
     }
+    /*原创首发点击处理*/
     mpClick() {
         console.log('mp');
         this.setState (
@@ -40,6 +43,7 @@ class Origin extends Component {
             }
         );
     }
+    /*原创非首发点击处理*/
     otherClick() {
         console.log('other');
         this.setState (
@@ -48,9 +52,10 @@ class Origin extends Component {
             }
         );
     }
+    /*原创确定按钮点击处理*/
     okClick() {
         const { dispatch } = this.props;
-        dispatch(toggleDialog('hide'));
+        dispatch(toggleDialog({status: 'hide'}));
         dispatch(saveArticle({ claim_origin: 1}))
         this.setState({
             slideClass: 'origin-slide-pre',
@@ -58,18 +63,20 @@ class Origin extends Component {
             platform: 'mp'
         });
     }
+    /*原创取消按钮点击处理*/
     cancelClick() {
         const { dispatch } = this.props;
-        dispatch(toggleDialog('hide'));
+        dispatch(toggleDialog({status: 'hide'}));
         this.setState({
             slideClass: 'origin-slide-pre',
             index: 0,
             platform: 'mp'
         });
     }
+    /*原创dialog关闭点击处理*/
     closeClick() {
         const { dispatch } = this.props;
-        dispatch(toggleDialog('hide'));
+        dispatch(toggleDialog({status: 'hide'}));
         this.setState({
             slideClass: 'origin-slide-pre',
             index: 0,
@@ -81,14 +88,14 @@ class Origin extends Component {
         let that = this;
         return (
             <div>
-                <Dialog toggleStatus={this.props.toggleStatus.status}>
+                <Dialog toggleStatus={this.props.toggleStatus.status} dialogClass="t-dialog">
                     <div className="modal-dialog">
                         <div className="dialog-content">
                             <div className="dialog-header">
                                 <div>
                                     <span className="t-dialog-close" onClick={this.closeClick.bind(this)}>&#10006;</span>
                                 </div>
-                                <div className='nav_arrow'>
+                                <div className='nav-arrow'>
                                     <span className={"left" + (this.state.index === 0 ? " current" : "")}>
                                         原创声明须知
                                     </span>
@@ -139,29 +146,29 @@ class Origin extends Component {
                                         </div>
                                     </div>
                                     <div className="origin-content">
-                                        <ul className="apply_create_form">
+                                        <ul className="apply-create-form">
                                             <li>
                                                 <label>头条号首发</label>
-                                                <div className="edit-input apply_create_first">
-                                                    <div className={"form1_checkbox" + (this.state.platform === "mp" ? " checked" : "")} onClick={this.mpClick.bind(this)}>首发</div>
+                                                <div className="edit-input apply-create-first">
+                                                    <div className={"form1-checkbox" + (this.state.platform === "mp" ? " checked" : "")} onClick={this.mpClick.bind(this)}>首发</div>
                                                 </div>
-                                                <div className={ "form1_checkbox" + (this.state.platform === "other" ? " checked" : "") } onClick={this.otherClick.bind(this)}>非首发</div>
+                                                <div className={ "form1-checkbox" + (this.state.platform === "other" ? " checked" : "") } onClick={this.otherClick.bind(this)}>非首发</div>
                                             </li>
-                                            <li className={ "origin_mp" + (this.state.platform === "mp" ? " origin_active" : "") }>
-                                                <label>平台名称</label><input data-name="debut_mp" type="text" />
+                                            <li className={ "origin-mp" + (this.state.platform === "mp" ? " origin-active" : "") }>
+                                                <label>平台名称</label><input type="text" />
                                             </li>
-                                            <li className={ "origin_mp" + (this.state.platform === "mp" ? " origin_active" : "") }>
-                                                <label>作者</label><input data-name="debut_author" type="text" />
+                                            <li className={ "origin-mp" + (this.state.platform === "mp" ? " origin-active" : "") }>
+                                                <label>作者</label><input type="text" />
                                             </li>
 
-                                            <li className={ "origin_other" + (this.state.platform === "other" ? " origin_active" : "") }>
-                                                <label>首发链接</label><input data-name="debut_url" type="text" placeholder="文章首发平台链接" />
+                                            <li className={ "origin-other" + (this.state.platform === "other" ? " origin-active" : "") }>
+                                                <label>首发链接</label><input type="text" placeholder="文章首发平台链接" />
                                             </li>
-                                            <li className={ "origin_other" + (this.state.platform === "other" ? " origin_active" : "") }>
-                                                <label>首发平台</label><input data-name="debut_platform" type="text" placeholder="文章首发平台名称" />
+                                            <li className={ "origin-other" + (this.state.platform === "other" ? " origin-active" : "") }>
+                                                <label>首发平台</label><input type="text" placeholder="文章首发平台名称" />
                                             </li>
-                                            <li className={ "origin_other" + (this.state.platform === "other" ? " origin_active" : "") }>
-                                                <label>作者名称</label><input data-name="debut_other_author" type="text" placeholder="在该平台的作者名称" />
+                                            <li className={ "origin-other" + (this.state.platform === "other" ? " origin-active" : "") }>
+                                                <label>作者名称</label><input type="text" placeholder="在该平台的作者名称" />
                                             </li>
                                         </ul>
                                         <div className="edit-btns">
@@ -181,7 +188,7 @@ class Origin extends Component {
 
 function stateMapToProps(state) {
     return {
-        toggleStatus: state.origin
+        toggleStatus: state.dialog
     };
 }
 
