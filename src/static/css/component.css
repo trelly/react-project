@@ -1,0 +1,101 @@
+/*tinymce编辑框*/
+
+.t-editor .mce-ico {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 16px;
+    line-height: 16px;
+    speak: none;
+    vertical-align: text-top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    background: transparent center center;
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    color: #333;
+}
+
+.t-editor .mce-i-newdocument:before {
+    content: "\e604" !important;
+}
+.t-editor .mce-i-undo:before {
+    content: "\e608" !important;
+}
+.t-editor .mce-i-redo:before {
+    content: "\e60b" !important;
+}
+.t-editor .mce-i-bold:before {
+    content: "\e601" !important;
+}
+.t-editor .mce-i-underline:before {
+    content: "\e609";
+}
+.t-editor .mce-i-italic:before {
+    content: "\e607";
+}
+.t-editor .mce-i-blockquote:before {
+    content: "\e612";
+}
+.t-editor .mce-i-bullist:before {
+    content: "\e602";
+}
+.t-editor .mce-i-numlist:before {
+    content: "\e60d";
+}
+.t-editor .mce-i-alignleft:before {
+    content: "\e615";
+}
+.t-editor .mce-i-aligncenter:before {
+    content: "\e61a";
+}
+.t-editor .mce-i-alignright:before {
+    content: "\e61a";
+}
+.t-editor .mce-i-aligncenter:before {
+    content: "\e613";
+}
+.t-editor .mce-i-preview:before {
+    content: "\e610";
+}
+.t-editor .mce-i-link:before {
+    content: "\e60a";
+}
+.t-editor .mce-i-image:before {
+    content: "\e60f";
+}
+.t-editor .mce-i-media:before {
+    content: "\e619";
+}
+
+/*扩展功能*/
+
+.t-editor .mce-i-article:before {
+    content: "\e60a";
+}
+.t-editor .mce-i-picture:before {
+    content: "\e60f";
+}
+.t-editor .mce-i-video:before {
+    content: "\e619";
+}
+.t-editor .mce-i-rank:before {
+    content: "\e613";
+}
+.t-editor .mce-i-voice:before {
+    content: "\e61a";
+}
+.t-editor .mce-i-commodity:before {
+    content: "\e615";
+}
+.t-editor .mce-i-tel:before {
+    content: "\e616";
+}

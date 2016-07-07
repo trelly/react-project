@@ -1,4 +1,10 @@
-import { SWITCH_MENU, FETCH_PROFILE, DIALOG_STATUS, SAVE_ARTICLE } from '../constants/ActionTypes'
+import {
+    SWITCH_MENU,
+    FETCH_PROFILE,
+    FETCH_MEDIA,
+    DIALOG_STATUS,
+    SAVE_ARTICLE
+} from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
 import 'babel-polyfill'
 
@@ -27,20 +33,40 @@ export function toggleDialog(data) {
 
 // 获取用户信息
 
-function fetchMedia(media, json) {
+function fetchMedia(json) {
     return {
-        type: FETCH_PROFILE,
-        media,
-        mediaInfo: json.data.media,
+        type: FETCH_MEDIA,
+        media: json.data.media,
         receivedAt: Date.now()
     }
 }
 
-export function fetchPosts(media) {
-    return function (dispatch) {
-        return fetch(`/media/get_media_infor/`, {credentials: 'include'}).then(response => response.json()).then(json =>
-            dispatch(fetchMedia(media, json))
+export function fetchMediaPosts() {
+    return function(dispatch) {
+        return fetch(`/media/get_media_infor/`, {
+            credentials: 'include'
+        }).then(response => response.json()).then(json =>
+            dispatch(fetchMedia(json))
         )
     }
 }
 
+// 获取用户信息
+
+function fetchUser(json) {
+    return {
+        type: FETCH_PROFILE,
+        user: json.data.user,
+        receivedAt: Date.now()
+    }
+}
+
+export function fetchUserPosts() {
+    return function(dispatch) {
+        return fetch(`/media/get_current_user/`, {
+            credentials: 'include'
+        }).then(response => response.json()).then(json =>
+            dispatch(fetchUser(json))
+        )
+    }
+}

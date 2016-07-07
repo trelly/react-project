@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <title>发表文章-头条号</title>
@@ -7,28 +8,30 @@
     <link rel="stylesheet" href="http://localhost:8080/assets/static/css/iconfont/iconfont.css">
     <link rel="stylesheet" href="http://localhost:8080/assets/static/css/index.css">
 </head>
+
 <body>
-<div id="container"></div>
-<script src="http://localhost:8080/assets/tinymce/tinymce.min.js"></script>
-<script src="http://localhost:8080/assets/tinymce/langs/zh_CN.js"></script>
-<script src="http://localhost:8080/assets/bundle.js"></script>
-<script>
-    /**
-     * @file editor.config.js
-     * @desc 编辑器配置文件
-     */
-    tinymce.init({
-        selector: '#editor',
-        plugins: "textpattern, image, link, media, preview, anchor, autosave, autoresize",
-        menubar: false,
-        toolbar: ['undo redo | bold underline | blockquote bullist numlist alignleft aligncenter alignright', 'link image media | preview'],
-        autosave_restore_when_empty: false,
-        autosave_ask_before_unload: true,
-        autosave_interval: "5s",
-        width: '700px',
-        statusbar: false,
-        autoresize_bottom_margin: 50
-    });
-</script>
+    <div id="container"></div>
+    <script src="http://localhost:8080/assets/tinymce/tinymce.min.js"></script>
+    <script src="http://localhost:8080/assets/tinymce/langs/zh_CN.js"></script>
+    <script src="http://localhost:8080/assets/bundle.js"></script>
+    <script>
+        /**
+         * @file editor.config.js
+         * @desc 编辑器配置文件
+         */
+        tinymce.init({
+            selector: '#editor',
+            plugins: "textpattern, image, link, media, preview, anchor, autosave, autoresize",
+            menubar: false,
+            toolbar: ['undo redo | bold underline | blockquote bullist numlist alignleft aligncenter alignright', 'link image media | preview'],
+            autosave_restore_when_empty: false,
+            autosave_ask_before_unload: true,
+            autosave_interval: "5s",
+            width: '700px',
+            statusbar: false,
+            autoresize_bottom_margin: 50
+        });
+    </script>
 </body>
+
 </html>
