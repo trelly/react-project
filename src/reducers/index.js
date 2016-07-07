@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
     article: articleReducer,
     menu: menuReducer,
     media: mediaReducer,
-    dialog: dialogReducer
+    dialog: dialogReducer,
     user: userReducer,
     notification: notificationReducer
 })
