@@ -3,15 +3,31 @@ import {
     FETCH_PROFILE,
     FETCH_MEDIA,
     DIALOG_STATUS,
-    SAVE_ARTICLE
+    ARTICLE_DRAFT,
+    ARTCILE_OFF,
+    ARTICLE_RELEASE
 } from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
 import 'babel-polyfill'
 
 export function saveArticle(data) {
     return {
-        type: SAVE_ARTICLE,
+        type: ARTICLE_RELEASE,
         data
+    }
+}
+
+export function saveDraft(data) {
+    return {
+        type: ARTICLE_DRAFT,
+        data
+    }
+}
+
+export function cancleArticle(articleId) {
+    return {
+        type: ARTICLE_OFF,
+        articleId
     }
 }
 

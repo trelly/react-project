@@ -17,57 +17,49 @@ module.exports = {
             tinymce: 'tinymce/tinymce.min',
         }
     },
+    proxy: {
+        "/assets/tinymce/*": {
+          target: "http://localhost:8080"
+        }
+    },
     module: {
-        loaders: [
-            {
-                test: /.jsx?$/,
-                loader: [
-                    'babel-loader'
-                ],
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            },
-            {
-                test: /\.css$/, // Only .css files
-                loader: 'style!css' // Run both loaders
+        loaders: [{
+            test: /.jsx?$/,
+            loader: [
+                'babel-loader'
+            ],
+            exclude: /node_modules/,
+            query: {
+                presets: ['es2015', 'react']
             }
-        ]
+        }, {
+            test: /\.css$/, // Only .css files
+            loader: 'style!css' // Run both loaders
+        }]
     },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"development"'
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new TransferWebpackPlugin([
-            {
-                from: path.resolve(__dirname, 'node_modules/jquery'),
-                to: 'jquery'
-            },
-            {
-                from: path.resolve(__dirname, 'node_modules/tinymce'),
-                to: 'tinymce'
-            },
-            {
-                from: path.resolve(__dirname, 'src/static/tinymce'),
-                to: 'tinymce'
-            },
-            {
-                from: path.resolve(__dirname, 'node_modules/bootstrap'),
-                to: 'bootstrap'
-            },
-            {
-                from: path.resolve(__dirname, 'node_modules/normalize.css'),
-                to: 'static/css'
-            },
-            {
-                from: path.resolve(__dirname, 'src/static/tinymce/langs'),
-                to: 'tinymce/langs'
-            },
-            {
-                from: path.resolve(__dirname, 'src/static'),
-                to: 'static'
-            }])
+        new TransferWebpackPlugin([{
+            from: path.resolve(__dirname, 'node_modules/jquery'),
+            to: 'jquery'
+        }, {
+            from: path.resolve(__dirname, 'node_modules/tinymce'),
+            to: 'tinymce'
+        }, {
+            from: path.resolve(__dirname, 'src/static/tinymce'),
+            to: 'tinymce'
+        }, {
+            from: path.resolve(__dirname, 'node_modules/bootstrap'),
+            to: 'bootstrap'
+        }, {
+            from: path.resolve(__dirname, 'node_modules/normalize.css'),
+            to: 'static/css'
+        }, {
+            from: path.resolve(__dirname, 'src/static'),
+            to: 'static'
+        }])
     ]
 };

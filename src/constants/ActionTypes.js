@@ -1,8 +1,10 @@
-export const PUBLISH = 'PUBLISH'
-export const SAVE_DRAFT = 'SAVE_DRAFT'
-export const CANCEL_RELEASE = 'CANCEL_RELEASE'
+// 文章操作
+export const ARTICLE_RELEASE = 'ARTICLE_RELEASE'
+export const ARTICLE_DRAFT = 'ARTICLE_DRAFT'
+export const ARTCILE_OFF = 'ARTCILE_OFF'
+
+// 弹窗
 export const DIALOG_STATUS = 'DIALOG_STATUS'
-export const SAVE_ARTICLE = 'SAVE_ARTICLE'
 
 export const SWITCH_MENU = 'SWITCH_MENU'
 

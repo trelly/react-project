@@ -1,21 +1,24 @@
 /*tinymce编辑框*/
 
 .t-editor .mce-panel {
-  background-color: #fff;
+    background-color: #fff;
+}
+.mce-window {
+    border-radius: 6px !important;
+}
+.mce-primary {
+    background-color: #ff635c !important;
 }
 
 .t-editor .mce-btn {
-  background-color: transparent;
+    background-color: transparent;
 }
-
 .t-editor .mce-toolbar {
-  border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
 }
-
 .t-editor .mce-toolbar.mce-last {
-  border-bottom: none;
+    border-bottom: none;
 }
-
 .t-editor .mce-ico {
     font-family: "iconfont" !important;
     font-style: normal;
@@ -37,7 +40,6 @@
     height: 20px;
     color: #999;
 }
-
 .t-editor .mce-i-newdocument:before {
     content: "\e604" !important;
 }

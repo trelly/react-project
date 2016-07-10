@@ -5,18 +5,20 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import Dropdown from '../components/Dropdown.jsx'
+import {saveArticle, saveDraft, cancleArticle} from '../actions'
 
 class Header extends Component {
     constructor(props, context) {
         super(props, context);
     }
     render() {
+      const {dispatch, article} = this.props;
         return (
             <header className="t-header">
                 <div className="t-logo"></div>
                 <ul className="t-header-menu">
                     <Dropdown ts="t-publish">
-                        <button className="t-publish-btn">发表
+                        <button className="t-publish-btn" onClick={()=>dispatch(saveArticle(article))}>发表
                             <span className="t-caret"></span>
                         </button>
                         <li className="t-menu-item">存草稿</li>

@@ -1,0 +1,22 @@
+div.pic-wrapper {
+    zoom: 1;
+    height: 350px;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    font-family: sans-serif;
+    border:solid 1px #ccc;
+}
+
+#upload .placeholder {
+    margin: 10px;
+    border: 2px dashed #e6e6e6;
+    height: 172px;
+    padding-top: 150px;
+    text-align: center;
+    background: url(http://mp.toutiao.com/static/resource/pgc_ueditor/dialogs/image/images/image.png) center 70px no-repeat;
+    color: #cccccc;
+    font-size: 18px;
+    position: relative;
+    top: 0;
+}
