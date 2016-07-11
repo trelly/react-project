@@ -124,4 +124,14 @@ export const category = [{
 }, {
     type: 'news_psychology',
     name: '心理'
-}]
+}];
+
+export const mediaTypes = {
+    1: '群媒体',
+    2: '个人',
+    3: '国家机构',
+    4: '广告主',
+    5: '企业',
+    6: '其他组织',
+    7: '新闻机构'
+};

@@ -1,30 +1,22 @@
 * {
     box-sizing: border-box;
 }
-
-html,
-body {
+html, body {
     min-height: 100%;
 }
-
-
 body {
-    font-family: helvetica,Arial,"Hiragino Sans GB","Microsoft YaHei",simsun
+    font-family: helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", simsun
 }
-
 a {
     text-decoration: none;
     color: #5d5d5d;
 }
-a:active,
-a:hover {
+a:active, a:hover {
     color: #5d5d5d;
 }
-
 .iconfont {
     font-size: 22px;
 }
-
 .t-header {
     position: fixed;
     width: 100%;
@@ -35,14 +27,23 @@ a:hover {
     background: #fff;
     z-index: 100;
 }
-
 .t-logo {
     float: left;
     width: 81px;
     height: 28px;
     background: url("/assets/static/images/logo.png");
 }
-
+.t-notification-num {
+    background: #f7473f;
+    color: #fff;
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    border-radius: 2px;
+    padding: 0 6px;
+    text-align: center;
+    font-size: 12px;
+}
 .t-main {
     position: fixed;
     /*position: absolute;*/
@@ -52,14 +53,12 @@ a:hover {
     left: 70px;
     z-index: 100;
 }
-
 .t-slider-left {
     position: absolute;
     bottom: 0;
     top: 70px;
     z-index: 100;
 }
-
 .t-collapse {
     position: absolute;
     top: 50%;
@@ -71,7 +70,6 @@ a:hover {
     box-shadow: 5px 0px 7px #f1f1f1;
     cursor: pointer;
 }
-
 .t-content {
     position: absolute;
     top: 0;
@@ -81,34 +79,28 @@ a:hover {
     box-shadow: 5px 0px 7px #f1f1f1;
     z-index: 1000;
 }
-
 .t-tab {
     width: 70px;
     height: 100%;
     position: absolute;
     background-color: #fafafa;
 }
-
 .t-tab-content {
     padding: 0 20px;
     width: 280px;
 }
-
 .panel-slider-collapse .t-tab-content {
     display: none;
 }
-
 .panel-slider-collapse .t-editor {
     left: 0 !important;
 }
-
 .t-menu-bar {
     list-style: none;
     padding: 0;
     margin: 0;
     line-height: 1;
 }
-
 .t-menu {
     height: 76px;
     text-align: center;
@@ -116,53 +108,43 @@ a:hover {
     font-size: 14px;
     padding-top: 18px;
 }
-
 .t-menu:hover {
     opacity: .8;
     cursor: pointer;
 }
-
 .t-menu.active {
     background-color: #ff635c;
     color: #fff;
 }
-
 .t-icon {
     display: inline-block;
     height: 22px;
     width: 22px;
     background-position: center;
 }
-
 .icon-edit {
     background: url(/assets/static/images/edit.png) no-repeat;
 }
-
 .icon-video {
     background: url(/assets/static/images/video.png) no-repeat;
 }
-
 .icon-atlas {
     background: url(/assets/static/images/atlas.png) no-repeat;
 }
-
 .icon-test {
     background: url(/assets/static/images/test.png) no-repeat;
 }
-
 .t-icon-text {
     display: inline-block;
     width: 100%;
     margin-top: 10px;
 }
-
 .t-message {
     display: inline-block;
     float: right;
     margin: 10px 20px 0;
     cursor: pointer;
 }
-
 .icon-message {
     width: 23px;
     height: 18px;
@@ -172,12 +154,10 @@ a:hover {
     display: inline-block;
     background: url("/assets/static/images/message.png");
 }
-
 .t-publish {
     float: right;
     margin: 3px 10px 0 0;
 }
-
 .t-publish-btn {
     width: 88px;
     height: 32px;
@@ -188,7 +168,6 @@ a:hover {
     outline: none;
     cursor: pointer;
 }
-
 .t-caret {
     display: inline-block;
     width: 0;
@@ -200,7 +179,6 @@ a:hover {
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
 }
-
 .t-dropdown {
     position: absolute;
     top: 100%;
@@ -208,49 +186,39 @@ a:hover {
     margin: 10px 0 0 0;
     transform: translate(-50%);
     left: 50%;
-
     list-style: none;
     border: 1px solid #ddd;
     background: #fff;
     border-radius: 4px;
     box-shadow: 0 0 10px #ddd;
-
     white-space: nowrap;
 }
-
 .t-dropdown:after {
     content: '';
     display: table;
 }
-
-
 .t-dropdown:before {
     content: '';
     display: table;
 }
-
 .t-dropdown-caret {
     position: absolute;
     left: 50%;
     top: -6px;
     z-index: -10;
     display: inline-block;
-
     width: 10px;
     height: 10px;
-
     background: #fff;
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;
     transform: rotateZ(45deg);
 }
-
 .t-menu-divided {
     height: 0;
     overflow: hidden;
     border-top: 1px solid #d9dde4;
 }
-
 .t-publish-menu {
     font-size: 14px;
     padding: 0;
@@ -259,17 +227,14 @@ a:hover {
     color: #5d5d5d;
     list-style: none;
 }
-
 .t-publish-menu .t-menu-item {
     line-height: 2;
     padding: 0 30px;
     cursor: pointer;
 }
-
 .t-publish-menu .t-menu-item:hover {
     background: #d9dde4;
 }
-
 .t-editor {
     position: absolute;
     top: 0;
@@ -278,23 +243,19 @@ a:hover {
     left: 280px;
     overflow-y: auto;
 }
-
 .t-editor-wrap {
     text-align: center;
     width: 700px;
     margin: 20px auto;
 }
-
 .t-menu-collapse {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 .t-panel {
     border-bottom: 1px solid #e8e8e8;
 }
-
 .t-panel-title {
     position: relative;
     height: 60px;
@@ -304,17 +265,15 @@ a:hover {
     font-weight: bold;
     cursor: pointer;
 }
-
 .none-select {
     moz-user-select: -moz-none;
     -moz-user-select: none;
-    -o-user-select:none;
-    -khtml-user-select:none;
-    -webkit-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
 .t-panel-title::after {
     content: " ";
     position: absolute;
@@ -327,31 +286,25 @@ a:hover {
     background: url("/assets/static/images/collapse.png") no-repeat center;
     transform: rotateZ(180deg);
 }
-
 .t-icon-uncollapsed::after {
     transform: rotateZ(0deg) !important;
 }
-
 .t-panel-collapse {
     display: none;
 }
-
 .show {
     display: block;
 }
-
 .t-panel-body {
     padding: 5px 1px;
     overflow-x: hidden;
     overflow-y: auto;
 }
-
 .t-menu-other {
     position: absolute;
     bottom: 15px;
     text-align: center;
 }
-
 .t-icon-radius {
     display: inline-block;
     width: 38px;
@@ -363,32 +316,25 @@ a:hover {
     cursor: pointer;
     color: #999;
 }
-
 .t-icon-radius:hover {
     opacity: .8;
 }
-
 .t-control-group {
     margin-bottom: 10px;
 }
-
 .t-label {
     font-size: 14px;
     color: #999;
 }
-
 .t-control {
     font-size: 14px;
     color: #444;
     line-height: 2;
 }
-
-.t-control input[type=radio],
-.t-control input[type=checkbox] {
+.t-control input[type=radio], .t-control input[type=checkbox] {
     width: 1em;
     height: 1em;
 }
-
 .t-button-origin {
     display: inline-block;
     width: 100px;
@@ -405,23 +351,19 @@ a:hover {
     background: #fff;
     outline: none;
 }
-
 .t-profile-img {
     width: 36px;
     height: 36px;
     float: right;
 }
-
 .t-profile {
     float: right;
     cursor: pointer;
 }
-
 .t-profile-info {
     float: right;
     margin-left: 8px;
 }
-
 .t-profile-type {
     padding: 0 8px;
     background: #f7473f;
@@ -430,29 +372,23 @@ a:hover {
     color: #fefefe;
     border-radius: 4px;
 }
-
 .t-profile-name {
     font-size: 14px;
 }
-
 .t-header-menu {
     float: right;
     margin: 0;
     padding: 0;
     list-style: none;
 }
-
 .t-header-menu>li {
     float: left;
     position: relative;
 }
-
 .t-menu-title {
     text-align: center;
 }
-
-
-.nav-arrow span{
+.nav-arrow span {
     display: inline-block;
     position: relative;
     width: 190px;
@@ -463,12 +399,10 @@ a:hover {
     z-index: 2;
     background: url("/assets/static/images/original_create_arrow1.png") no-repeat;
 }
-
 .nav-arrow .current {
     color: #fff;
     background-image: url("/assets/static/images/original_create_arrow.png");
 }
-
 .form1-checkbox {
     min-width: 18px;
     min-height: 18px;
@@ -480,18 +414,15 @@ a:hover {
     text-indent: 25px;
     background: url("/assets/static/images/checkbox.png") no-repeat 0 center;
 }
-.form1-checkbox.active,
-.form1-checkbox.checked {
+.form1-checkbox.active, .form1-checkbox.checked {
     background-image: url("/assets/static/images/checkbox_checked.png");
 }
-.form1-checkbox.active.disabled,
-.form1-checkbox.checked.disabled {
+.form1-checkbox.active.disabled, .form1-checkbox.checked.disabled {
     background-image: url("/assets/static/images/checkbox_checked_disabled.png");
 }
 .form1-checkbox.disabled {
     cursor: not-allowed;
 }
-
 .t-mask {
     /*display: none;*/
     opacity: .5;

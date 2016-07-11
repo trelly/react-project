@@ -13,7 +13,7 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 
-import {fetchMediaPosts, fetchUserPosts} from './actions'
+import {fetchMediaPosts, fetchUserPosts, fetchNotificatonPosts} from './actions'
 import './static/css/component.css'
 
 const logger = createLogger();
@@ -29,6 +29,11 @@ store.dispatch(fetchMediaPosts()).then(() =>
 store.dispatch(fetchUserPosts()).then(() =>
     console.log(store.getState())
 )
+
+store.dispatch(fetchNotificatonPosts()).then(() =>
+    console.log(store.getState())
+)
+
 
 class App extends Component {
     constructor(props, context) {

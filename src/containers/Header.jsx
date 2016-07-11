@@ -5,6 +5,7 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import Dropdown from '../components/Dropdown.jsx'
+import MediaType from '../components/MediaType.jsx'
 import {saveArticle, saveDraft, cancleArticle} from '../actions'
 
 class Header extends Component {
@@ -12,20 +13,23 @@ class Header extends Component {
         super(props, context);
     }
     render() {
-      const {dispatch, article} = this.props;
+        const {dispatch, article, media} = this.props;
         return (
             <header className="t-header">
                 <div className="t-logo"></div>
                 <ul className="t-header-menu">
                     <Dropdown ts="t-publish">
-                        <button className="t-publish-btn" onClick={()=>dispatch(saveArticle(article))}>发表
+                        <button className="t-publish-btn" onClick={() => dispatch(saveArticle(article))}>发表
                             <span className="t-caret"></span>
                         </button>
                         <li className="t-menu-item">存草稿</li>
                         <li className="t-menu-item">取消发布</li>
                     </Dropdown>
                     <Dropdown ts="t-message">
-                        <button className="icon-message"></button>
+                        <div>
+                            <button className="icon-message"></button>
+                            <span className="t-notification-num">2</span>
+                        </div>
                         <li className="t-menu-item">
                             <a target="inform" href="/message/#inform">通知</a>
                         </li>
@@ -45,10 +49,10 @@ class Header extends Component {
                     <li className="t-profile">
                         <div className="t-profile-info">
                             <div>
-                                <span className="t-profile-type">{this.props.media.name}</span>
+                                <MediaType type={media.type}/>
                             </div>
                             <div>
-                                <span className="t-profile-name">{this.props.media.name}</span>
+                                <span className="t-profile-name">{media.name}</span>
                             </div>
                         </div>
                         <div className="t-profile-img">
