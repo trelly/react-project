@@ -10,14 +10,43 @@ import {
 } from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
 import 'babel-polyfill'
-
-export function saveArticle(data) {
+// 保存文章
+function saveArticleSuccess(data) {
     return {
         type: ARTICLE_RELEASE,
         data
     };
 }
 
+function saveArticleFailure(data) {
+    return {
+        type: ARTICLE_RELEASE,
+        data
+    };
+}
+
+export function saveArticle(data) {
+    return function(dispatch) {
+        console.log(data);
+        return $.ajax({
+            type: 'post',
+            url: '/edit_article_post/',
+            dataType: 'json',
+            data,
+            success: function(json) {
+                dispatch(saveArticleSuccess(json));
+            },
+            error: function(json) {
+                dispatch(saveArticleFailure(json));
+            }
+        });
+    };
+}
+
+// 从主页撤销 /hide_article/ post id=xx&item_id=x&group_id:xx&pgc_id:xx&source_type=0
+
+
+// 保存草稿
 export function saveDraft(data) {
     return {
         type: ARTICLE_DRAFT,
@@ -25,6 +54,7 @@ export function saveDraft(data) {
     };
 }
 
+// 取消发布
 export function cancleArticle(articleId) {
     return {
         type: ARTICLE_OFF,
@@ -84,10 +114,10 @@ export function fetchUserPosts() {
         )
     };
 }
-
+// 获取通知
 function fetchNotification(json) {
     return {
-        type: FETCH_PROFILE,
+        type: FETCH_NOTIFICATION,
         notification: json.data,
         receivedAt: Date.now()
     };
@@ -95,13 +125,12 @@ function fetchNotification(json) {
 
 export function fetchNotificatonPosts() {
     return function(dispatch) {
-        return fetch(`//toutiao.com/dongtai/notification/count/?include=2,43,4,5,6,72,84&detail=1`, {
-            credentials: 'include'
-        }).then(response => {
-            // response.setHeader('Access-Control-Allow-Origin': '*');
-            return response.json();
-        }).then(json =>
-            dispatch(fetchNotification(json))
-        )
+        return $.ajax({
+            type: 'get',
+            url: '//toutiao.com/dongtai/notification/count/?include=2,43,4,5,6,72,84&detail=1',
+            dataType: 'jsonp'
+        }).then(function(json) {
+            dispatch(fetchNotification(json));
+        });
     };
 }

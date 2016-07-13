@@ -19,9 +19,9 @@ class Slider extends Component {
                 <div className="t-tab">
                     <MenuList className="t-menu-bar" onSwitchClick={index => dispatch(switchMenu(index))} currentIndex={this.props.menu.index}>
                         <div className="t-menu" icon="icon-articletab" title="文章"/>
-                        <div className="t-menu" icon="icon-videotab" title="视频"/>
-                        <div className="t-menu" icon="icon-pictab" title="图集"/>
-                        <div className="t-menu" icon="icon-testtab" title="测试"/>
+                        <div className="t-menu" link="/new_article/?article_type=1" icon="icon-videotab" title="视频"/>
+                        <div className="t-menu" link="/new_article/?article_type=3" icon="icon-pictab" title="图集"/>
+                        <div className="t-menu" link="/new_article/?article_type=2" icon="icon-testtab" title="测试"/>
                     </MenuList>
                     <div className="t-menu-other">
                         <div className="t-icon-radius">

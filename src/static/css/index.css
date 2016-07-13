@@ -25,13 +25,13 @@ a:active, a:hover {
     padding: 17px 28px 0 23px;
     height: 70px;
     background: #fff;
-    z-index: 100;
+    z-index: 1000;
 }
 .t-logo {
     float: left;
     width: 81px;
     height: 28px;
-    background: url("/assets/static/images/logo.png");
+    background: url("../images/logo.png");
 }
 .t-notification-num {
     background: #f7473f;
@@ -44,6 +44,20 @@ a:active, a:hover {
     text-align: center;
     font-size: 12px;
 }
+
+.t-num-tip {
+    background-color: #f7473f;
+    color: #fff;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    border-radius: 2px;
+    padding: 0 6px;
+    text-align: center;
+    line-height: 1em;
+    font-size: 12px;
+}
+
 .t-main {
     position: fixed;
     /*position: absolute;*/
@@ -66,8 +80,8 @@ a:active, a:hover {
     margin-top: -49px;
     width: 12px;
     height: 98px;
-    background: #fff url("/assets/static/images/collapse-left.png") no-repeat center;
-    box-shadow: 5px 0px 7px #f1f1f1;
+    background: #fff url("../images/collapse-left.png") no-repeat center;
+    box-shadow: 1px 0px 5px #f1f1f1;
     cursor: pointer;
 }
 .t-content {
@@ -76,7 +90,7 @@ a:active, a:hover {
     left: 0;
     bottom: 0;
     border-left: 1px solid #f1f1f1;
-    box-shadow: 5px 0px 7px #f1f1f1;
+    box-shadow: 1px 0px 5px #f1f1f1;
     z-index: 1000;
 }
 .t-tab {
@@ -123,16 +137,16 @@ a:active, a:hover {
     background-position: center;
 }
 .icon-edit {
-    background: url(/assets/static/images/edit.png) no-repeat;
+    background: url(../images/edit.png) no-repeat;
 }
 .icon-video {
-    background: url(/assets/static/images/video.png) no-repeat;
+    background: url(../images/video.png) no-repeat;
 }
 .icon-atlas {
-    background: url(/assets/static/images/atlas.png) no-repeat;
+    background: url(../images/atlas.png) no-repeat;
 }
 .icon-test {
-    background: url(/assets/static/images/test.png) no-repeat;
+    background: url(../images/test.png) no-repeat;
 }
 .t-icon-text {
     display: inline-block;
@@ -142,7 +156,7 @@ a:active, a:hover {
 .t-message {
     display: inline-block;
     float: right;
-    margin: 10px 20px 0;
+    margin: 10px 40px 0 20px;
     cursor: pointer;
 }
 .icon-message {
@@ -152,7 +166,7 @@ a:active, a:hover {
     border: none;
     cursor: pointer;
     display: inline-block;
-    background: url("/assets/static/images/message.png");
+    background: url("../images/message.png");
 }
 .t-publish {
     float: right;
@@ -193,6 +207,7 @@ a:active, a:hover {
     box-shadow: 0 0 10px #ddd;
     white-space: nowrap;
 }
+
 .t-dropdown:after {
     content: '';
     display: table;
@@ -231,6 +246,7 @@ a:active, a:hover {
     line-height: 2;
     padding: 0 30px;
     cursor: pointer;
+    position: relative;
 }
 .t-publish-menu .t-menu-item:hover {
     background: #d9dde4;
@@ -283,7 +299,7 @@ a:active, a:hover {
     display: inline-block;
     width: 10px;
     height: 6px;
-    background: url("/assets/static/images/collapse.png") no-repeat center;
+    background: url("../images/collapse.png") no-repeat center;
     transform: rotateZ(180deg);
 }
 .t-icon-uncollapsed::after {
@@ -397,11 +413,11 @@ a:active, a:hover {
     background-color: #fff;
     text-align: center;
     z-index: 2;
-    background: url("/assets/static/images/original_create_arrow1.png") no-repeat;
+    background: url("../images/original_create_arrow1.png") no-repeat;
 }
 .nav-arrow .current {
     color: #fff;
-    background-image: url("/assets/static/images/original_create_arrow.png");
+    background-image: url("../images/original_create_arrow.png");
 }
 .form1-checkbox {
     min-width: 18px;
@@ -412,13 +428,13 @@ a:active, a:hover {
     white-space: nowrap;
     display: inline-block;
     text-indent: 25px;
-    background: url("/assets/static/images/checkbox.png") no-repeat 0 center;
+    background: url("../images/checkbox.png") no-repeat 0 center;
 }
 .form1-checkbox.active, .form1-checkbox.checked {
-    background-image: url("/assets/static/images/checkbox_checked.png");
+    background-image: url("../images/checkbox_checked.png");
 }
 .form1-checkbox.active.disabled, .form1-checkbox.checked.disabled {
-    background-image: url("/assets/static/images/checkbox_checked_disabled.png");
+    background-image: url("../images/checkbox_checked_disabled.png");
 }
 .form1-checkbox.disabled {
     cursor: not-allowed;
@@ -445,8 +461,8 @@ a:active, a:hover {
     margin-top: 4px;
     margin-right: 10px;
     cursor: pointer;
-    background: url("/assets/static/images/checkbox.png") no-repeat 0 center;
+    background: url("../images/checkbox.png") no-repeat 0 center;
 }
 .ad-radio.selected, .popup-radio.selected {
-    background: url("/assets/static/images/checkbox_checked.png") no-repeat 0 center;
+    background: url("../images/checkbox_checked.png") no-repeat 0 center;
 }

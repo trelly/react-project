@@ -28,16 +28,16 @@
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 16px;
     speak: none;
     vertical-align: text-top;
     -moz-osx-font-smoothing: grayscale;
     display: inline-block;
     background: transparent center center;
     background-size: cover;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     color: #999;
 }
 .t-editor .mce-i-newdocument:before {

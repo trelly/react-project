@@ -25,7 +25,13 @@ export function userReducer(state = initialUserState, action) {
     }
 }
 
-const initialNotificationState = {}
+const initialNotificationState = {
+    detail_counts: {
+      '2': 0,
+      '5': 0
+    },
+    update_count: 0
+}
 export function notificationReducer(state = initialNotificationState, action) {
     switch (action.type) {
         case FETCH_NOTIFICATION:

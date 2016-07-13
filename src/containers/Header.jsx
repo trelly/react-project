@@ -6,6 +6,7 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import Dropdown from '../components/Dropdown.jsx'
 import MediaType from '../components/MediaType.jsx'
+import {SplitButton, MenuItem} from 'react-bootstrap';
 import {saveArticle, saveDraft, cancleArticle} from '../actions'
 
 class Header extends Component {
@@ -13,7 +14,7 @@ class Header extends Component {
         super(props, context);
     }
     render() {
-        const {dispatch, article, media} = this.props;
+        const {dispatch, article, media, notification} = this.props;
         return (
             <header className="t-header">
                 <div className="t-logo"></div>
@@ -28,7 +29,7 @@ class Header extends Component {
                     <Dropdown ts="t-message">
                         <div>
                             <button className="icon-message"></button>
-                            <span className="t-notification-num">2</span>
+                            <span className="t-notification-num">{notification.update_count}</span>
                         </div>
                         <li className="t-menu-item">
                             <a target="inform" href="/message/#inform">通知</a>
@@ -38,12 +39,14 @@ class Header extends Component {
                         </li>
                         <li className="t-menu-item">
                             <a target="inform" href="/message/#subscribe">订阅</a>
+                            <span className="t-num-tip">{notification.detail_counts['2']}</span>
                         </li>
                         <li className="t-menu-item">
                             <a target="inform" href="/message/#collect">收藏</a>
                         </li>
                         <li className="t-menu-item">
                             <a target="inform" href="/message/#retransmit">转发</a>
+                            <span className="t-num-tip">{notification.detail_counts['5']}</span>
                         </li>
                     </Dropdown>
                     <li className="t-profile">
@@ -66,7 +69,7 @@ class Header extends Component {
 }
 
 function stateMapToProps(state) {
-    return {article: state.article, media: state.media};
+    return {article: state.article, media: state.media, notification: state.notification};
 }
 
 export default connect(stateMapToProps)(Header);

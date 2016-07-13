@@ -1,54 +1,63 @@
-var webpack = require('webpack');
-
-// nodejspath 模块
 var path = require('path');
-var buildPath = path.resolve(__dirname, 'dist');
-
-// webpack 若需要迁移文件操作，需要加载transfer-webpack-plugin 插件
+var webpack = require('webpack');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
-
 module.exports = {
-    // 入口文件
-    entry: './src/app.jsx',
-    // 配置加载后缀名
-    resolve: {
-        extensions: ["", ".js", ".jsx"]
+    contentBase: 'build',
+    entry: {
+        bundle: './src/app.jsx',
     },
-    // 产出路径
     output: {
-        path: buildPath,
-        filename: "app.js"
+        path: path.resolve(__dirname, 'build'),
+        filename: '[name].js'
+    },
+    resolve: {
+        alias: {
+            tinymce: 'tinymce/tinymce.min',
+        }
     },
     module: {
         loaders: [{
-            test: /\.css$/,
-            loader: "style!css"
-        }, {
-            test: /\.less$/,
-            loader: "style!css!less"
-        }, {
-            test: /\.jsx?$/,
-            exclude: /(node_modules|bower_components)/,
-            loader: 'babel', // 'babel-loader' is also a legal name to reference
+            test: /.jsx?$/,
+            loader: [
+                'babel-loader'
+            ],
+            exclude: /node_modules/,
             query: {
-                presets: ['react', 'es2015']
+                presets: ['es2015', 'react']
             }
+        }, {
+            test: /\.css$/, // Only .css files
+            loader: 'style!css' // Run both loaders
         }]
     },
     plugins: [
-        // 配置js压缩
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                //supresses warnings, usually from module minification
-                warnings: false
-            }
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"development"'
         }),
+        new webpack.HotModuleReplacementPlugin(),
         new TransferWebpackPlugin([{
-            from: 'www'
-        }], path.resolve(__dirname, "src/projects/batch_ban")),
-        new TransferWebpackPlugin([{
-            from: './',
+            from: 'src/www'
+        }, {
+            from: 'node_modules/webuploader',
+            to: 'libs/webuploader'
+        }, {
+            from: 'node_modules/jquery',
+            to: 'libs/jquery'
+        }, {
+            from: 'node_modules/tinymce',
+            to: 'libs/tinymce'
+        }, {
+            from: 'src/static/tinymce',
+            to: 'libs/tinymce'
+        }, {
+            from: 'node_modules/bootstrap',
+            to: 'libs/bootstrap'
+        }, {
+            from: 'src/static',
             to: 'static'
-        }], path.resolve(__dirname, "src/static"))
+        }, {
+            from: 'node_modules/normalize.css',
+            to: 'static/css'
+        }])
     ]
 };

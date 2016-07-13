@@ -1,26 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
-console.log(path.resolve(__dirname, 'node_modules/tinymce'));
 module.exports = {
-    contentBase: 'build',
-    entry: {
-        bundle: './src/app.jsx'
-    },
+    // contentBase: 'build',
+    entry: [
+        'webpack/hot/dev-server',
+        'webpack/hot/only-dev-server',
+        './src/app.jsx'
+    ],
     output: {
-        path: path.resolve(__dirname, 'build'),
-        publicPath: '/assets/',
-        filename: '[name].js'
-    },
-    resolve: {
-        alias: {
-            tinymce: 'tinymce/tinymce.min',
-        }
-    },
-    proxy: {
-        "/assets/tinymce/*": {
-          target: "http://localhost:8080"
-        }
+        filename: 'bundle.js'
     },
     module: {
         loaders: [{
@@ -43,23 +32,28 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new TransferWebpackPlugin([{
-            from: path.resolve(__dirname, 'node_modules/jquery'),
-            to: 'jquery'
+            from: 'src/www'
         }, {
-            from: path.resolve(__dirname, 'node_modules/tinymce'),
-            to: 'tinymce'
+            from: 'node_modules/webuploader',
+            to: 'libs/webuploader'
         }, {
-            from: path.resolve(__dirname, 'src/static/tinymce'),
-            to: 'tinymce'
+            from: 'node_modules/jquery',
+            to: 'libs/jquery'
         }, {
-            from: path.resolve(__dirname, 'node_modules/bootstrap'),
-            to: 'bootstrap'
+            from: 'node_modules/tinymce',
+            to: 'libs/tinymce'
         }, {
-            from: path.resolve(__dirname, 'node_modules/normalize.css'),
-            to: 'static/css'
+            from: 'src/static/tinymce',
+            to: 'libs/tinymce'
         }, {
-            from: path.resolve(__dirname, 'src/static'),
+            from: 'node_modules/bootstrap',
+            to: 'libs/bootstrap'
+        }, {
+            from: 'src/static',
             to: 'static'
+        }, {
+            from: 'node_modules/normalize.css',
+            to: 'static/css'
         }])
     ]
 };
