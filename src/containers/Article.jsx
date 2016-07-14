@@ -74,7 +74,7 @@ class Article extends Component {
                         <div className="t-tab-item">
                             <div className="t-menu-collapse">
                                 <Accordion title="大纲">
-                                    <span>213123</span>
+                                    <span></span>
                                 </Accordion>
                                 <Accordion title="功能">
                                     <ControlGroup label="原创">
@@ -147,7 +147,7 @@ class Article extends Component {
                                     </ControlGroup>
                                 </Accordion>
                                 <Accordion title="模板">
-                                    <span>213123</span>
+                                    <span></span>
                                 </Accordion>
                             </div>
                         </div>

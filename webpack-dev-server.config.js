@@ -11,6 +11,14 @@ module.exports = {
     output: {
         filename: 'bundle.js'
     },
+    devServer: {
+        proxy: {
+            // '/media/*/': {
+            //     target: 'http://mp.toutiao.com',
+            //     secure: false
+            // }
+        }
+    },
     module: {
         loaders: [{
             test: /.jsx?$/,
